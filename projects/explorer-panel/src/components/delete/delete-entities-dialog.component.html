@@ -1,0 +1,9 @@
+<dialog-container [title]="localization.common.delete">
+  <div dialogBody>{{ localization.common.delete_confirm_message }}</div>
+  <div dialogFooter>
+    <button primary-button-outline (click)="onCancel()">{{ localization.common.cancel }}</button>
+    <div class="flex-space"></div>
+    <button primary-button (click)="onSuccess()">{{ localization.common.delete }}</button>
+  </div>
+</dialog-container>
+

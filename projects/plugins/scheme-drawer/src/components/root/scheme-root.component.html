@@ -1,0 +1,13 @@
+@if (key) {
+  <editor-container>
+    <scheme-editor [key]="key" (onSelectionChange)="onSelectionChange($event)"></scheme-editor>
+    <editor-drawer>
+      @if (configuration) {
+        <ng-scrollbar appearance="compact" track="vertical">
+          <configuration-root [configuration]="configuration"></configuration-root>
+        </ng-scrollbar>
+      }
+    </editor-drawer>
+  </editor-container>
+}
+

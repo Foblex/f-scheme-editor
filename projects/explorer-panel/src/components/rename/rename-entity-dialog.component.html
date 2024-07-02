@@ -1,0 +1,18 @@
+@if(form) {
+  <dialog-container [title]="localization.common.rename">
+    <div dialogBody>
+
+      <div formContainer [formGroup]="form" (keydown)="handleKeyDown($event)">
+        <div formRow>
+          <mat-form-field>
+            <input matInput [focusOnInit]="true" formControlName="name" [placeholder]="localization.common.name">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div dialogFooter>
+      <button primary-button-outline (click)="onCancel()">{{ localization.common.cancel }}</button>
+      <button primary-button [disabled]="!form.valid || !form.dirty" (click)="onSuccess()">{{ localization.common.rename }}</button>
+    </div>
+  </dialog-container>
+}

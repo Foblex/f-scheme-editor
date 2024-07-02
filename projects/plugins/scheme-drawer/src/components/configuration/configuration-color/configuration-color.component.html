@@ -1,0 +1,6 @@
+@if (control) {
+  <mat-form-field>
+    <f-color-picker-overlay matPrefix #picker></f-color-picker-overlay>
+    <input matInput [fColorOverlay]="picker" [formControl]="control.formControl">
+  </mat-form-field>
+}

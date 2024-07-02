@@ -1,0 +1,5 @@
+@if (control) {
+  <mat-form-field>
+    <textarea matInput (blur)="onBlur()" [formControl]="currentControl" [cdkTextareaAutosize]="true" [cdkAutosizeMinRows]="3"></textarea>
+  </mat-form-field>
+}

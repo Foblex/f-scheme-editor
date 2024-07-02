@@ -1,0 +1,20 @@
+<dialog-container [title]="localization.common.copy">
+  <div dialogBody>
+    @if (form) {
+      <div formContainer [formGroup]="form" (keydown)="handleKeyDown($event)">
+        <div formRow>
+          <mat-form-field>
+            <input matInput [focusOnInit] formControlName="name" [placeholder]="localization.common.name">
+          </mat-form-field>
+        </div>
+      </div>
+    } @else {
+      <p>{{ localization.common.copy_confirm_message }}</p>
+    }
+  </div>
+  <div dialogFooter>
+    <button primary-button-outline (click)="onCancel()">{{ localization.common.cancel }}</button>
+    <button primary-button [focusOnInit]="!form" (click)="onSuccess()">{{ localization.common.confirm }}</button>
+  </div>
+</dialog-container>
+

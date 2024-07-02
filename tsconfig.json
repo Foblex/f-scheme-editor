@@ -5,6 +5,35 @@
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
+    "paths": {
+      "@explorer-panel": [
+        "./projects/explorer-panel/src/public-api"
+      ],
+      "@core": [
+        "./projects/core/src/public-api"
+      ],
+      "@ui-kit": [
+        "./projects/ui-kit/src/public-api"
+      ],
+      "@directory": [
+        "./projects/plugins/directory/src/public-api"
+      ],
+      "@resources": [
+        "./projects/resources/src/public-api"
+      ],
+      "@editor-container": [
+        "./projects/editor-container/src/public-api"
+      ],
+      "@palette": [
+        "./projects/plugins/palette/src/public-api"
+      ],
+      "@router-controller": [
+        "./projects/router-controller/src/public-api"
+      ],
+      "@foblex/flow": [
+        "./projects/f-flow/src/public-api"
+      ]
+    },
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
@@ -13,7 +42,7 @@
     "sourceMap": true,
     "declaration": false,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",

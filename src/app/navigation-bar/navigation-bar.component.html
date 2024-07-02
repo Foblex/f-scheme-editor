@@ -1,0 +1,10 @@
+<button class="navigation-bar-item"
+     [class.navigation-bar-item-selected]="configuration!.explorerPanel.isVisible"
+     [title]="localization.explorer_panel.project" (click)="onToggleExplorerPanel()">
+    <div class="navigation-bar-item-content">
+        <mat-icon>{{ icons.PROJECT }}</mat-icon>
+    </div>
+</button>
+
+<div class="flex-space"></div>
+

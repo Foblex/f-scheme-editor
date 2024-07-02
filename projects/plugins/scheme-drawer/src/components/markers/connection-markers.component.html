@@ -1,0 +1,14 @@
+<ng-template #arrow let-type="type" let-color="color">
+  <svg viewBox="0 0 700 700" fMarker [type]="type"
+       [height]="5" [width]="5"
+       [refX]="4" [refY]="2.5" markerUnits="strokeWidth" orient="auto">
+    <path d="M0,0L700,350L0,700L150,350z" [attr.fill]="color"/>
+  </svg>
+</ng-template>
+<ng-template #circle let-type="type" let-color="color">
+  <svg viewBox="0 0 700 700" fMarker [type]="type"
+       [height]="5" [width]="5"
+       [refX]="4" [refY]="2.5" markerUnits="strokeWidth">
+    <circle cx="350" cy="350" r="350" [attr.fill]="color"/>
+  </svg>
+</ng-template>

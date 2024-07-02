@@ -1,0 +1,36 @@
+<div class="explorer-panel-toolbar">
+  @if (searchControl.disabled) {
+    <button icon-button [icon]="icons.SEARCH" [title]="localization.common.new_item"
+            (click)="onShowSearchClick()">
+    </button>
+    <div class="flex-space"></div>
+    <button icon-button [icon]="icons.EXPAND_ALL" [title]="localization.explorer_panel.expand_all">
+    </button>
+    <button icon-button [icon]="icons.COLLAPSE_ALL" [title]="localization.explorer_panel.collapse_all">
+    </button>
+    <button icon-button [icon]="icons.MORE_VERTICAL" [title]="localization.explorer_panel.show_options_menu">
+    </button>
+  } @else {
+    <mat-form-field class="toolbar-search" appearance="outline">
+      <input matInput (keyup)="onSearchKeyUp($event)" [formControl]="searchControl"
+             [placeholder]="localization.common.type_in_to_search">
+      @if (searchControl.value) {
+        <button matSuffix>
+          <mat-icon [title]="localization.explorer_panel.reset_search"
+                    (click)="resetSearch()">
+            {{ icons.REMOVE_VALUE }}
+          </mat-icon>
+        </button>
+      }
+    </mat-form-field>
+
+    <button icon-button [icon]="icons.HIDE_SEARCH_BAR" [title]="localization.explorer_panel.hide_search"
+            (click)="onHideSearchClick()">
+    </button>
+  }
+
+  <button icon-button [icon]="icons.HIDE" [title]="localization.explorer_panel.hide_explorer_panel"
+          (click)="onHideExplorerPanelClick()">
+  </button>
+</div>
+

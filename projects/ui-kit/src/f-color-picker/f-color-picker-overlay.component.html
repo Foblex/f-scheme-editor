@@ -1,0 +1,22 @@
+<f-color-picker-rect cdk-overlay-origin
+                     class="color-prefix"
+                     [color]="color"
+                     (click)="onOpen()"
+                     #fallbackOverlayOrigin="cdkOverlayOrigin">
+</f-color-picker-rect>
+
+<ng-template cdk-connected-overlay
+             cdkConnectedOverlayLockPosition
+             cdkConnectedOverlayHasBackdrop
+             cdkConnectedOverlayBackdropClass="cdk-overlay-transparent-backdrop"
+             [cdkConnectedOverlayOrigin]="preferredOverlayOrigin || fallbackOverlayOrigin"
+             [cdkConnectedOverlayOpen]="isPanelVisible"
+             [cdkConnectedOverlayPositions]="positions"
+             (attach)="onAttached()"
+             (backdropClick)="onClose()">
+  <div class="f-overlay-panel"
+       [@transformPanel]="'showing'"
+       (@transformPanel.done)="onAnimationDone()">
+    <f-color-picker (onSelect)="onColorSelect($event)"></f-color-picker>
+  </div>
+</ng-template>

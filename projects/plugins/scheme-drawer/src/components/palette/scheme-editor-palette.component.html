@@ -1,0 +1,17 @@
+<ng-scrollbar appearance="compact" track="all">
+  <div class="palette-content">
+    @for (item of viewModel; track item.key) {
+      <div class="palette-group">
+        <div class="palette-group-header">{{ item.name }}</div>
+        <div class="palette-group-content">
+          @for (subItem of item.items; track subItem.key) {
+            <div class="palette-item" fExternalItem [fData]="subItem.key" [matTooltip]="subItem.name">
+              <mat-icon class="palette-item-icon">home</mat-icon>
+              <span class="palette-item-name">{{ subItem.name }}</span>
+            </div>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</ng-scrollbar>

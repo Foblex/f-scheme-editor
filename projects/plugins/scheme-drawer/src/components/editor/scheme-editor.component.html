@@ -1,0 +1,95 @@
+@if (viewModel) {
+  <scheme-editor-palette></scheme-editor-palette>
+  <div class="flow-section">
+    <f-flow fDraggable
+            (fSelectionChange)="onSelectionChange.emit($event)"
+            (fLoaded)="onLoaded()"
+            (fCreateNode)="onCreateNode($event)"
+            (fCreateConnection)="onCreateConnection($event)"
+            (fReassignConnection)="onReassignConnection($event)">
+      @switch (viewModel.background) {
+        @case (eSchemeBackground.RECT) {
+          <f-background [sBackgroundStyle]="viewModel">
+            <f-rect-pattern></f-rect-pattern>
+          </f-background>
+        }
+        @case (eSchemeBackground.DOT) {
+          <f-background [sBackgroundStyle]="viewModel">
+            <f-circle-pattern></f-circle-pattern>
+          </f-background>
+        }
+        @case (eSchemeBackground.CROSS) {
+          <f-background [sBackgroundStyle]="viewModel">
+            <f-circle-pattern></f-circle-pattern>
+          </f-background>
+        }
+      }
+      <f-line-alignment></f-line-alignment>
+      <connection-markers #markers></connection-markers>
+      <f-canvas [position]="viewModel.visualState.position" [scale]="viewModel.visualState.scale" fZoom
+                (fCanvasChange)="onCanvasChange($event)">
+
+        @for (connection of viewModel.connections;track connection.key) {
+          <f-connection [fConnectionId]="connection.key"
+                        [fBehavior]="connection.behaviour"
+                        [fType]="connection.type"
+                        [fOutputId]="connection.key"
+                        [fInputId]="connection.key"
+                        [fStartColor]="connection.style.color.color1"
+                        [fRadius]="connection.radius"
+                        [fOffset]="connection.offset"
+                        [fEndColor]="connection.style.color.color2 || connection.style.color.color1">
+            @switch (connection.markerStart) {
+              @case (eSchemeConnectionMarker.ARROW) {
+                <ng-container
+                  *ngTemplateOutlet="markers.arrow; context: { type: eMarkerType.START, color: connection.style.color.color1 }"></ng-container>
+                <ng-container
+                  *ngTemplateOutlet="markers.arrow; context: { type: eMarkerType.SELECTED_START, color: connection.style.color.color1 }"></ng-container>
+              }
+              @case (eSchemeConnectionMarker.CIRCLE) {
+                <ng-container
+                  *ngTemplateOutlet="markers.circle; context: { type: eMarkerType.START, color: connection.style.color.color1 }"></ng-container>
+                <ng-container
+                  *ngTemplateOutlet="markers.circle; context: { type: eMarkerType.SELECTED_START, color: connection.style.color.color1 }"></ng-container>
+              }
+            }
+            @switch (connection.markerEnd) {
+              @case (eSchemeConnectionMarker.ARROW) {
+                <ng-container
+                  *ngTemplateOutlet="markers.arrow; context: { type: eMarkerType.END, color: connection.style.color.color2 || connection.style.color.color1 }"></ng-container>
+                <ng-container
+                  *ngTemplateOutlet="markers.arrow; context: { type: eMarkerType.SELECTED_END, color: connection.style.color.color2 || connection.style.color.color1 }"></ng-container>
+              }
+              @case (eSchemeConnectionMarker.CIRCLE) {
+                <ng-container
+                  *ngTemplateOutlet="markers.circle; context: { type: eMarkerType.END, color: connection.style.color.color2 || connection.style.color.color1 }"></ng-container>
+                <ng-container
+                  *ngTemplateOutlet="markers.circle; context: { type: eMarkerType.SELECTED_END, color: connection.style.color.color2 || connection.style.color.color1 }"></ng-container>
+              }
+            }
+            <div fConnectionCenter class="connection-text" [tStyle]="connection.text">
+              {{ connection.text.text }}
+            </div>
+          </f-connection>
+        }
+
+        <f-connection-for-create [fBehavior]="eConnectionBehavior.FLOATING">
+          <ng-container *ngTemplateOutlet="markers.circle; context: { type: eMarkerType.START }"></ng-container>
+          <ng-container *ngTemplateOutlet="markers.arrow; context: { type: eMarkerType.END }"></ng-container>
+        </f-connection-for-create>
+        @for (node of viewModel.nodes;track node.key) {
+          <s-node [viewModel]="node" fNode fDragHandle
+                  [fNodePosition]="{ x: node.rectStyle.x, y: node.rectStyle.y }"
+                  (fNodePositionChange)="onMoveNode(node, $event)"
+                  [fNodeSize]="{ width: node.rectStyle.width, height: node.rectStyle.height }"
+                  (fNodeSizeChange)="onResizeNode(node.key, $event)"
+                  [fNodeId]="node.key">
+          </s-node>
+        }
+      </f-canvas>
+      <f-selection-area></f-selection-area>
+    </f-flow>
+    <scheme-editor-toolbar></scheme-editor-toolbar>
+  </div>
+}
+

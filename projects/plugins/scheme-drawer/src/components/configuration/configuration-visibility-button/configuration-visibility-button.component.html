@@ -1,0 +1,8 @@
+<button f-icon-button (click)="toggle()">
+  @if (control.formControl.value) {
+    <mat-icon [svgIcon]="'visible'"></mat-icon>
+  } @else {
+    <mat-icon [svgIcon]="'hidden'"></mat-icon>
+  }
+</button>
+

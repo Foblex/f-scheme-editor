@@ -1,0 +1,11 @@
+@if (control) {
+  <mat-form-field>
+    <mat-icon [svgIcon]="control.mixedPanel!.icon1" matPrefix></mat-icon>
+    <input matInput (blur)="onBlur()" [formControl]="formBuilder.control">
+  </mat-form-field>
+  <f-overlay-panel [value]="formBuilder.getValue()" (valueChange)="onValueChange($event)">
+    <mat-icon f-trigger [svgIcon]="control.mixedPanel!.icon"></mat-icon>
+    <mixed-panel [configuration]="control.mixedPanel!"></mixed-panel>
+  </f-overlay-panel>
+}
+

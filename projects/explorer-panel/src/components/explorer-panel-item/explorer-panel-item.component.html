@@ -1,0 +1,15 @@
+@if (viewModel) {
+  @if (isExpandable) {
+    <div class="expand-collapse-button">
+      <mat-icon class="expand-collapse-button-content">
+        {{ isExpanded ? icons.COLLAPSE : icons.EXPAND }}
+      </mat-icon>
+    </div>
+
+  } @else {
+    <div class="expand-collapse-button"></div>
+  }
+  <mat-icon class="item-icon"
+            [style.color]="viewModel.type | entityColor">{{ viewModel.type | entityIcon }}</mat-icon>
+  <span class="item-name">{{ viewModel.name }}</span>
+}

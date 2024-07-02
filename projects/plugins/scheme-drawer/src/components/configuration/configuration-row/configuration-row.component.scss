@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  min-height: 32px;
+}
+
+::ng-deep .configuration-component {
+  display: flex;
+  flex: 1;
+  max-width: 180px;
+  justify-content: flex-start;
+  align-items: center;
+}

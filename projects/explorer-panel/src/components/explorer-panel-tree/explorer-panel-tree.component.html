@@ -1,0 +1,36 @@
+<ng-scrollbar appearance="compact" track="all">
+  <div class="explorer-panel" [class.explorer-panel-focused]="isFocused" epDraggable
+       (onChanges)="onDragAndDropChanged()" (dropToDirectory)="onDropToContainer($event)">
+    <ng-template #template let-directory let-depth="depth">
+
+      <button ep-item
+              epDragHandle
+              [title]="directory.name"
+              [epItemPadding]="depth"
+              [viewModel]="directory"
+              (click)="onClick($event, directory)"
+              (contextmenu)="onContextMenu($event, directory)"
+              (dblclick)="onDoubleClick($event, directory)">
+      </button>
+
+      @if (toggleService.expanded[directory.key]) {
+        @for (item of directory.children; track item.key) {
+          <ng-container
+            [ngTemplateOutlet]="template"
+            [ngTemplateOutletContext]="{ $implicit: item, depth: depth + 1 }">
+          </ng-container>
+        }
+      }
+
+    </ng-template>
+
+    @if (viewModel) {
+      <ng-container
+        [ngTemplateOutlet]="template"
+        [ngTemplateOutletContext]="{ $implicit: viewModel, depth: 0 }">
+      </ng-container>
+    }
+    <div #softFocus tabindex="0"></div>
+  </div>
+</ng-scrollbar>
+

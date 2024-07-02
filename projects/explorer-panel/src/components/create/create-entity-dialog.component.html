@@ -1,0 +1,29 @@
+@if(form) {
+  <dialog-container [title]="localization.common.create">
+    <div dialogBody>
+      <div formContainer [formGroup]="form" (keydown)="handleKeyDown($event)">
+        <div formRow>
+          <mat-form-field>
+            <mat-select [focusOnInit]="!isTypeOnInit" formControlName="type"
+                        [placeholder]="localization.common.select_type">
+              @for (option of options; track option.key) {
+                <mat-option [value]="option.key">{{ option.name }}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div formRow>
+          <mat-form-field>
+            <input matInput [focusOnInit]="isTypeOnInit" formControlName="name" [placeholder]="localization.common.name">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div dialogFooter>
+      <button primary-button-outline (click)="onCancel()">{{ localization.common.cancel }}</button>
+      <button primary-button [disabled]="!form.valid || !form.dirty"
+              (click)="onSuccess()">{{ localization.common.create }}</button>
+    </div>
+  </dialog-container>
+}
+

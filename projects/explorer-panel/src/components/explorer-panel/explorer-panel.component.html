@@ -1,0 +1,15 @@
+<header ep-toolbar></header>
+@if (viewModel) {
+  <main class="explorer-panel-body" #trigger [cdkContextMenuTriggerFor]="menu.template" (cdkContextMenuOpened)="menu.initialize()">
+    <ep-tree [viewModel]="viewModel"
+             (onActivateItem)="onActivateItem($event)"
+             (dropToContainer)="onMoveToContainer($event)">
+    </ep-tree>
+  </main>
+
+  <ep-context-menu #menu="menuComponent"
+                   (onContextMenuAction)="onContextMenuAction($event)">
+  </ep-context-menu>
+}
+
+

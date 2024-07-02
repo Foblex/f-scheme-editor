@@ -1,0 +1,11 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:meta';
+
+@mixin foblex-components($theme-or-color-config) {
+  $dedupe-key: 'foblex-theme';
+}
+
+@mixin foblex-theme($theme-or-color-config) {
+  @include foblex-components($theme-or-color-config);
+}

@@ -1,0 +1,80 @@
+<ng-template #menu>
+  <div cdkMenu>
+    <button cdkMenuItem [cdkMenuTriggerFor]="newItemContextMenu.menu">
+      <mat-icon class="context-menu-item-icon">{{ icons.ADD }}</mat-icon>
+      <span>{{ localization.common.new_item }}</span>
+      <div class="flex-space"></div>
+      <mat-icon class="context-menu-item-submenu-icon">{{ icons.ARROW_RIGHT }}</mat-icon>
+    </button>
+    <div class="context-menu-divider-container">
+      <div class="context-menu-divider"></div>
+    </div>
+    <button cdkMenuItem [disabled]="!isRenameEnabled" [type]="ACTION.RENAME" (cdkMenuItemTriggered)="onSelectionChange(ACTION.RENAME)">
+      <mat-icon class="context-menu-item-icon">{{ icons.RENAME }}</mat-icon>
+      <span>{{ localization.common.rename }}</span>
+      <div class="flex-space"></div>
+      <span class="context-menu-item-shortcut">{{ shortcuts.RENAME | shortcut }}</span>
+    </button>
+    <div class="context-menu-divider-container">
+      <div class="context-menu-divider"></div>
+    </div>
+    <button cdkMenuItem [disabled]="!isCutEnabled" [type]="ACTION.CUT" (cdkMenuItemTriggered)="onSelectionChange(ACTION.CUT)">
+      @if (isWriteClipboardGranted) {
+        <mat-icon class="context-menu-item-icon">
+          {{ icons.CUT }}
+        </mat-icon>
+      } @else {
+        <mat-icon class="context-menu-item-icon">
+          {{ icons.ATTENTION_CIRCLE }}
+        </mat-icon>
+      }
+      <span>{{ localization.common.cut }}</span>
+      <div class="flex-space"></div>
+      <span class="context-menu-item-shortcut">{{ shortcuts.CUT | shortcut }}</span>
+    </button>
+    <button cdkMenuItem [disabled]="!isCopyEnabled" [type]="ACTION.COPY" (cdkMenuItemTriggered)="onSelectionChange(ACTION.COPY)">
+      @if (isWriteClipboardGranted) {
+        <mat-icon class="context-menu-item-icon">
+          {{ icons.COPY }}
+        </mat-icon>
+      } @else {
+        <mat-icon class="context-menu-item-icon">
+          {{ icons.ATTENTION_CIRCLE }}
+        </mat-icon>
+      }
+      <span>{{ localization.common.copy }}</span>
+      <div class="flex-space"></div>
+      <span class="context-menu-item-shortcut">{{ shortcuts.COPY | shortcut }}</span>
+    </button>
+    <button cdkMenuItem [disabled]="!isPasteEnabled" [type]="ACTION.PASTE" (cdkMenuItemTriggered)="onSelectionChange(ACTION.PASTE)">
+      @if (isReadClipboardGranted) {
+        <mat-icon class="context-menu-item-icon">
+          {{ icons.PASTE }}
+        </mat-icon>
+      } @else {
+        <mat-icon class="context-menu-item-icon">
+          {{ icons.ATTENTION_CIRCLE }}
+        </mat-icon>
+      }
+      <span>{{ localization.common.paste }}</span>
+      <div class="flex-space"></div>
+      <span class="context-menu-item-shortcut">{{ shortcuts.PASTE | shortcut }}</span>
+    </button>
+    <div class="context-menu-divider-container">
+      <div class="context-menu-divider"></div>
+    </div>
+    <button cdkMenuItem [disabled]="!isDeleteEnabled" class="delete-item" [type]="ACTION.DELETE" (cdkMenuItemTriggered)="onSelectionChange(ACTION.DELETE)">
+      <mat-icon class="context-menu-item-icon">{{ icons.DELETE }}</mat-icon>
+      <span>{{ localization.common.delete }}</span>
+      <div class="flex-space"></div>
+      <span class="context-menu-item-shortcut">{{ shortcuts.REMOVE | shortcut }}</span>
+    </button>
+
+  </div>
+</ng-template>
+
+
+<ep-new-item-context-menu #newItemContextMenu="menuComponent"
+                          (onContextMenuAction)="onSelectionChange($event)">
+</ep-new-item-context-menu>
+

@@ -1,0 +1,31 @@
+<ng-template #menu>
+  <div cdkMenu>
+    <button cdkMenuItem [type]="SCRATCH_FILE" (cdkMenuItemTriggered)="onSelectionChange(SCRATCH_FILE)">
+      <mat-icon class="context-menu-item-icon">{{ icons.ENTITIES.SCRATCH_FILE}}</mat-icon>
+      <span>{{ SCRATCH_FILE | entityLocalization }}</span>
+      <div class="flex-space"></div>
+      <span class="context-menu-item-shortcut">{{ shortcuts.NEW | shortcut }}</span>
+    </button>
+
+    @if (directory) {
+      <button cdkMenuItem [type]="directory.type" (cdkMenuItemTriggered)="onSelectionChange(directory.type)">
+        <mat-icon class="context-menu-item-icon" [style.color]="directory.color">{{ directory.type | entityIcon }}</mat-icon>
+        <span>{{ directory.localization.name }}</span>
+        <div class="flex-space"></div>
+      </button>
+      <div class="context-menu-divider-container">
+        <div class="context-menu-divider"></div>
+      </div>
+    }
+
+    @for (plugin of entities;track plugin.type) {
+      <button cdkMenuItem (cdkMenuItemTriggered)="onSelectionChange(plugin.type)">
+        <mat-icon class="context-menu-item-icon" [style.color]="plugin.color">{{ plugin.type | entityIcon }}
+        </mat-icon>
+        <span>{{ plugin.localization.name }}</span>
+        <div class="flex-space"></div>
+      </button>
+    }
+  </div>
+</ng-template>
+

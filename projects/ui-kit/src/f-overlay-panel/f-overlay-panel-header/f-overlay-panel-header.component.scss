@@ -1,0 +1,24 @@
+:host {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 4px 4px 4px 16px;
+  border-bottom: var(--context-menu-border);
+
+  .f-overlay-panel-header-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .f-overlay-panel-header-action {
+    padding: 8px;
+
+    .mat-icon {
+      font-size: 12px;
+      height: 12px;
+      width: 12px;
+    }
+  }
+}
+

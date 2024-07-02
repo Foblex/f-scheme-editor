@@ -1,0 +1,107 @@
+
+.explorer-panel, .explorer-panel-drag-placeholder {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  padding: 0 0 10px;
+  display: block;
+  overflow: auto;
+  outline: none;
+
+  .explorer-panel-item {
+    width: 100%;
+    outline: none;
+    cursor: default;
+    user-select: none;
+    border: 1px solid transparent;
+    background-color: transparent;
+    height: 24px;
+    min-height: unset;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--explorer-panel-item-text);
+    padding-left: 12px;
+
+    .expand-collapse-button {
+      width: 16px;
+      height: 16px;
+      min-width: 16px;
+      margin-right: 2px;
+      color: var(--explorer-panel-expande-collapse-button-color);
+
+      .expand-collapse-button-content {
+        font-size: 16px;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+      }
+    }
+
+    .item-icon {
+      width: 16px;
+      min-width: 16px;
+      height: 16px;
+      font-size: 16px;
+      margin-right: 6px;
+      color: var(--gray6);
+    }
+
+    .item-name, .item-extension {
+      font-family: var(--font-family);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 16px;
+      white-space: nowrap;
+      width: fit-content;
+      text-align: left;
+      color: inherit;
+    }
+
+    &:hover {
+      background-color: var(--explorer-panel-item-hovered-background);
+    }
+
+    &.explorer-panel-item-selected {
+      color: var(--explorer-panel-item-text);
+      background-color: var(--explorer-panel-item-selected-not-focused-background);
+    }
+  }
+
+  &.explorer-panel-focused {
+    .explorer-panel-item {
+      &.explorer-panel-item-selected {
+        color: var(--explorer-panel-item-selected-focused-text);
+        background-color: var(--explorer-panel-item-selected-focused-background);
+      }
+
+      &.explorer-panel-item-drop-hovered {
+        border-color: var(--explorer-panel-item-drop-hovered-border);
+      }
+    }
+  }
+}
+
+
+.explorer-panel-drag-placeholder {
+  background-color: var(--context-menu-background);
+  border: var(--context-menu-border);
+  border-radius: var(--context-menu-border-radius);
+  box-shadow: var(--context-menu-shadow);
+  width: 220px;
+  height: unset;
+  padding: 8px 12px;
+  position: absolute;
+  z-index: var(--master-explorer-panel-drag-placeholder-z-index);
+
+  .expand-collapse-icon, .empty-icon {
+    display: none;
+  }
+
+  .explorer-panel-item {
+    padding-left: 10px !important;
+  }
+}
+
+

@@ -1,0 +1,10 @@
+<div class="configuration-section-header">
+  <span>{{ title }}</span>
+  <div class="flex-space"></div>
+
+  @if (control) {
+    <configuration-visibility-button [control]="control"></configuration-visibility-button>
+  }
+</div>
+<ng-container configuration-row-renderer [data]="rows"></ng-container>
+

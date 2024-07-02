@@ -1,0 +1,17 @@
+@if (control) {
+  <mat-form-field>
+    @if(prefix) {
+      <mat-icon [svgIcon]="prefix" matPrefix></mat-icon>
+    }
+    <mat-select [formControl]="control.formControl">
+      @for (option of control.options;track option.id) {
+        <mat-option [value]="option.id">
+          @if (option.icon) {
+            <mat-icon [svgIcon]="option.icon"></mat-icon>
+          }
+          {{ option.name }}
+        </mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+}

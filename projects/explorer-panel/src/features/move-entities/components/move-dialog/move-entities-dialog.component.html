@@ -1,0 +1,7 @@
+<dialog-container [title]="localization.common.move">
+  <div dialogBody>{{ localization.common.move_confirm_message }}</div>
+  <div dialogFooter [cdkTrapFocus]="true">
+    <button primary-button-outline (click)="onCancel()">{{ localization.common.cancel }}</button>
+    <button primary-button focusOnInit (click)="onSuccess()">{{ localization.common.move }}</button>
+  </div>
+</dialog-container>

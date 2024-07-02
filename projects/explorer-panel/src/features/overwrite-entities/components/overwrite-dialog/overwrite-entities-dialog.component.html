@@ -1,0 +1,9 @@
+<dialog-container [title]="localization.common.move">
+  <div dialogBody>{{ message }}</div>
+  <div dialogFooter [cdkTrapFocus]="true">
+    <button primary-button-outline [focusOnInit] (click)="onCancel()">{{ localization.common.cancel }}</button>
+    <button primary-button-outline (click)="onSkip()">{{ localization.common.skip }}</button>
+    <button primary-button (click)="onOverwrite()">{{ localization.common.overwrite }}</button>
+  </div>
+
+</dialog-container>

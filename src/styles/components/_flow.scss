@@ -1,0 +1,66 @@
+.f-flow {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  .f-background {
+    --f-background-stroke: var(--gray13);
+    --f-background-fill: transparent;
+
+    background: var(--f-background-fill);
+
+    line {
+      stroke: var(--f-background-stroke);
+    }
+
+    circle {
+      fill: var(--f-background-stroke);
+    }
+
+  }
+
+  .f-line-alignment {
+    .f-line {
+      background-color: var(--gray12);
+    }
+  }
+
+  .f-connection {
+    cursor: pointer;
+
+    .f-connection-path {
+      fill: none;
+    }
+
+
+    .f-connection-selection {
+      stroke: none;
+      stroke-width: 20px;
+      fill: none;
+    }
+
+    .f-connection-drag-handle {
+      r: 10px;
+      fill: transparent;
+    }
+
+    &.f-selected {
+
+      .f-connection-selection {
+        stroke: #3574f016;
+      }
+    }
+  }
+
+  .f-selection-area {
+    background-color: var(--blue4);
+    opacity: 0.05;
+  }
+
+
+
+  .connection-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

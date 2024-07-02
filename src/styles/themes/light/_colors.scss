@@ -1,0 +1,152 @@
+:root {
+
+  --gray1: #000000;
+  --gray2: #27282e;
+  --gray3: #383a42;
+  --gray4: #494b57;
+  --gray5: #5a5d6b;
+  --gray6: #6c707e;
+  --gray7: #818594;
+  --gray8: #a8adbd;
+  --gray9: #c9ccd6;
+  --gray10: #d3d5db;
+  --gray11: #dfe1e5;
+  --gray12: #ebecf0;
+  --gray13: #f7f8fa;
+  --gray14: #ffffff;
+
+  --blue1: #2e55a3;
+  --blue2: #315fbd;
+  --blue3: #3369d6;
+
+  --blue4: #18A0FB;
+
+  --blue5: #4682fa;
+  --blue6: #588cf3;
+  --blue7: #709cf5;
+  --blue8: #88adf7;
+  --blue9: #a0bdf8;
+  --blue10: #c2d6fc;
+  --blue11: #d4e2ff;
+  --blue12: #edf3ff;
+  --blue13: #f5f8fe;
+
+  --red1: #ad2b38;
+  --red2: #bc303e;
+  --red3: #cc3645;
+  --red4: #db3b4b;
+  --red5: #e55765;
+  --red6: #e46a76;
+  --red7: #ed99a1;
+  --red8: #f2b6bb;
+  --red9: #fad4d8;
+  --red10: #fff2f3;
+  --red11: #fff7f7;
+
+  --master-background: var(--gray13);
+
+  --text-main: #cccccc;
+  --text-placeholder: #9e9e9e;
+  --text-active: #ffffff;
+
+  --text-primary: #ffffff;
+  --text-secondary: #bbbbbb;
+
+  --blue: #0068b3;
+  --red: #f14c4c;
+
+  --panels-divider: 1px solid var(--gray12);
+
+  --navigation-bar-background: var(--gray13);
+  --navigation-bar-item-color: var(--gray6);
+  --navigation-bar-hovered-item-color: var(--gray6);
+  --navigation-bar-hovered-item-background: var(--gray9);
+  --navigation-bar-selected-item-color: var(--gray6);
+  --navigation-bar-selected-item-background: var(--gray11);
+
+  --explorer-panel-background: var(--gray13);
+  --explorer-panel-resize-handle: var(--blue6);
+
+  --explorer-panel-item-text: var(--gray1);
+  --explorer-panel-expande-collapse-button-color: var(--gray7);
+  --explorer-panel-item-selected-not-focused-background: var(--gray11);
+  --explorer-panel-item-selected-focused-text: var(--gray1);
+  --explorer-panel-item-selected-focused-background: var(--blue11);
+  --explorer-panel-item-drop-hovered-border: var(--blue11);
+  --explorer-panel-item-hovered-background: var(--gray11);
+
+  --editor-tab-group-background: var(--gray14);
+  --editor-tab-selected-background: var(--gray14);
+  --editor-tab-selected-border: var(--blue4);
+  --editor-tab-hovered-background: var(--gray12);
+  --editor-tab-not-selected-background: var(--gray14);
+  --editor-tab-text: var(--gray1);
+  --editor-tab-close-button-hovered-background: var(--gray13);
+  --editor-tab-close-button-text: var(--gray4);
+
+  --editor-details-panel-background: var(--gray14);
+  --editor-background: var(--gray14);
+
+  --primary-button-text: var(--gray14);
+  --primary-button-normal-border: var(--blue4);
+  --primary-button-normal-background: var(--blue4);
+  --primary-button-hovered-border: var(--blue3);
+  --primary-button-hovered-background: var(--blue3);
+  --primary-button-pressed-border: var(--blue2);
+  --primary-button-pressed-background: var(--blue2);
+  --primary-button-focused-border: var(--blue3);
+  --primary-button-focused-background: var(--blue3);
+  --primary-button-disabled-text: var(--gray8);
+  --primary-button-disabled-border: var(--gray12);
+  --primary-button-disabled-background: var(--gray12);
+
+  --primary-button-outline-text: var(--gray1);
+  --primary-button-outline-normal-border: var(--gray9);
+  --primary-button-outline-hovered-border: var(--gray8);
+  --primary-button-outline-pressed-border: var(--gray7);
+  --primary-button-outline-focused-border: var(--blue4);
+  --primary-button-outline-disabled-text: var(--gray8);
+  --primary-button-outline-disabled-border: var(--gray12);
+  --primary-button-outline-disabled-background: var(--gray12);
+
+  --icon-button-text: var(--gray6);
+  --icon-button-disabled-text: var(--gray8);
+  --icon-button-hovered-background: var(--gray12);
+  --icon-button-pressed-background: var(--gray11);
+
+  --dialog-title-text: var(--gray1);
+  --dialog-close-button-text: var(--gray4);
+  --dialog-close-button-hovered-background: var(--gray12);
+
+  --context-menu-background: var(--gray14);
+  --context-menu-border: 0.5px solid rgb(0, 0, 0, 0.1);
+  --context-menu-border-radius: 2px;
+  --context-menu-divider: var(--gray12);
+  --context-menu-shadow: 0px 6px 20px rgba(145, 145, 145, 0.47);
+  --context-menu-item-text: var(--gray1);
+  --context-menu-item-shortcut-text: var(--gray7);
+  --context-menu-delete-item-text: var(--red4);
+  --context-menu-item-hovered-background: var(--blue11);
+  --context-menu-item-disabled-text: var(--gray7);
+
+  --input-border-textarea: var(--gray11);
+  --input-border-focused: var(--blue4);
+  --input-border-disabled: #DFE1E5;
+  --input-border-focused-has-errors: var(--red4);
+  --input-border-not-focused-has-errors: var(--red2);
+  --input-background-disabled: #f7f8fa9e;
+  --input-placeholder: var(--gray8);
+  --input-icon: var(--gray1);
+  --input-text: var(--gray1);
+  --input-text-disabled: #A8ADBD;
+  --input-button-hovered-background: var(--gray12);
+
+  --input-dialog-border-normal: rgba(0, 0, 0, 0.1);
+  --input-editor-details-border-normal: var(--gray10);
+
+  --input-option-text: var(--gray1);
+  --input-option-selected-background: var(--gray13);
+
+  --normal-icon-color: var(--gray6);
+}
+

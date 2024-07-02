@@ -1,0 +1,28 @@
+:host {
+  position: relative;
+  width: 260px;
+  min-width: 260px;
+  height: 100%;
+  background-color: var(--editor-details-panel-background);
+  border-left: var(--panels-divider);
+
+  .editor-drawer-resize-handle {
+    position: absolute;
+    cursor: col-resize;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    z-index: 9;
+    transition: background-color 0.1s ease-in-out;
+
+    &:hover {
+      background-color: var(--explorer-panel-resize-handle);
+    }
+  }
+
+  .editor-drawer-content {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}

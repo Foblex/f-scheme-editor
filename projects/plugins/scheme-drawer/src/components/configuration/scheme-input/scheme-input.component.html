@@ -1,0 +1,9 @@
+@if (control) {
+  <mat-form-field>
+    @if(control.prefix) {
+      <mat-icon [svgIcon]="control.prefix" matPrefix></mat-icon>
+    }
+    <input matInput (blur)="onBlur()" [formControl]="currentControl">
+  </mat-form-field>
+}
+

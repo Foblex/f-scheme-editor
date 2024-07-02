@@ -1,0 +1,27 @@
+.f-overlay-panel {
+  margin-top: 3px;
+  background-color: var(--context-menu-background);
+  width: 100%;
+  border: var(--context-menu-border);
+  box-shadow: var(--context-menu-shadow);
+  border-radius: var(--context-menu-border-radius);
+  overflow: hidden;
+
+  .f-overlay-panel-form {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+
+    .f-overlay-panel-row {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 4px;
+      min-height: 32px;
+    }
+  }
+}
+
+.f-overlay-panel-button {
+  padding: 6px;
+}

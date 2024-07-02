@@ -1,0 +1,23 @@
+<f-overlay-panel-header [title]="configuration.label"></f-overlay-panel-header>
+<form [formGroup]="formBuilder.form" class="f-overlay-panel-form">
+  <div class="f-overlay-panel-row">
+    <mat-form-field>
+      <mat-icon [svgIcon]="configuration.icon1" matPrefix></mat-icon>
+      <input matInput formControlName="control1" (blur)="onBlur()">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-icon [svgIcon]="configuration.icon2" matPrefix></mat-icon>
+      <input matInput formControlName="control2" (blur)="onBlur()">
+    </mat-form-field>
+  </div>
+  <div class="f-overlay-panel-row">
+    <mat-form-field>
+      <mat-icon [svgIcon]="configuration.icon3" matPrefix></mat-icon>
+      <input matInput formControlName="control3" (blur)="onBlur()">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-icon [svgIcon]="configuration.icon4" matPrefix></mat-icon>
+      <input matInput formControlName="control4" (blur)="onBlur()">
+    </mat-form-field>
+  </div>
+</form>

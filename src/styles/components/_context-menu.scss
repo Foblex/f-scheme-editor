@@ -1,0 +1,83 @@
+.cdk-menu {
+  padding: 8px;
+  border-radius: var(--context-menu-border-radius);
+  border: var(--context-menu-border);
+  background-color: var(--context-menu-background);
+  box-shadow: var(--context-menu-shadow);
+  min-width: 200px;
+
+  .cdk-menu-item {
+    padding: 0 8px;
+    line-height: 24px;
+    height: 24px;
+    width: 100%;
+    border: none;
+    border-radius: 2px;
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    user-select: none;
+
+    &.large-item {
+      width: 260px;
+    }
+
+    @include font-default();
+    color: var(--context-menu-item-text);
+
+    &.delete-item {
+      .context-menu-item-icon {
+        color: var(--context-menu-delete-item-text);
+      }
+    }
+
+    .context-menu-item-icon {
+      width: 16px;
+      height: 16px;
+      font-size: 16px;
+      margin-right: 6px;
+      color: var(--gray6);
+    }
+
+    .context-menu-item-submenu-icon {
+      width: 16px;
+      height: 16px;
+      font-size: 16px;
+    }
+
+    .context-menu-item-shortcut {
+      color: var(--context-menu-item-shortcut-text);
+    }
+
+    &:not([disabled]) {
+      &:hover {
+        background-color: var(--context-menu-item-hovered-background);
+      }
+    }
+
+    &[disabled] {
+      color: var(--context-menu-item-disabled-text);
+
+      .context-menu-item-shortcut {
+        color: var(--context-menu-item-disabled-text);
+      }
+
+      .context-menu-item-icon {
+        color: var(--context-menu-item-disabled-text);
+      }
+    }
+  }
+
+  .context-menu-divider-container {
+    width: 100%;
+    height: 1px;
+    padding: 6px 0;
+
+    .context-menu-divider {
+      width: 100%;
+      height: 1px;
+      background-color: var(--context-menu-divider);
+    }
+  }
+}

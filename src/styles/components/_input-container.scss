@@ -1,0 +1,206 @@
+.fake-input-container {
+  height: 24px;
+  min-width: 120px;
+  white-space: nowrap;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: var(--input-text);
+}
+
+.mat-mdc-form-field {
+  width: 100%;
+  --mat-form-field-container-text-font: var(--font-family);
+  --mat-form-field-container-text-line-height: 16px;
+  --mat-form-field-container-text-size: 13px;
+  --mat-form-field-container-text-tracking: 0px;
+  --mat-form-field-container-text-weight: 500;
+
+  .mat-mdc-text-field-wrapper {
+    padding: 0;
+
+    .mat-mdc-form-field-flex {
+      background-color: white;
+
+      .mdc-notched-outline {
+        --mdc-filled-text-field-active-indicator-height: 1px;
+        --mdc-filled-text-field-container-shape: 2px;
+        --mdc-outlined-text-field-outline-width: 1px;
+        --mdc-outlined-text-field-focus-outline-width: 1px;
+        --mdc-outlined-text-field-container-shape: 2px;
+        --mdc-outlined-text-field-outline-color: transparent;
+        --mdc-outlined-text-field-hover-outline-color: var(--input-dialog-border-normal);
+        --mdc-outlined-text-field-focus-outline-color: var(--input-border-focused);
+        --mdc-outlined-text-field-error-outline-color: var(--input-border-not-focused-has-errors);
+        --mdc-outlined-text-field-error-hover-outline-color: var(--input-border-not-focused-has-errors);
+        --mdc-outlined-text-field-error-focus-outline-color: var(--input-border-focused-has-errors);
+        --mdc-outlined-text-field-disabled-outline-color: transparent; //var(--input-border-disabled);
+      }
+
+      .mat-mdc-form-field-icon-prefix {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0 0 0 8px;
+        color: rgba(0, 0, 0, 0.3);
+
+        .mat-icon {
+          width: 16px;
+          height: 16px;
+          display: block;
+          font-size: 16px;
+          padding: 0;
+          margin: 0;
+          color: inherit;
+        }
+
+        .mat-icon + .mat-icon {
+          margin-left: 4px;
+        }
+      }
+
+      .mat-mdc-form-field-icon-suffix {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0 8px 0 0;
+
+        button {
+          outline: none;
+          border: none;
+          background: none;
+          width: 14px;
+          height: 14px;
+          padding: 2px;
+          margin: 0;
+          border-radius: 50%;
+          cursor: pointer;
+
+          .mat-icon {
+            display: block;
+            color: var(--input-icon);
+            width: 10px;
+            height: 10px;
+            font-size: 10px;
+            cursor: pointer;
+          }
+
+          &:hover {
+            background-color: var(--input-button-hovered-background);
+          }
+        }
+
+        button + button {
+          margin-left: 4px;
+        }
+      }
+
+      .mat-mdc-form-field-infix {
+        min-height: 28px;
+        padding: 0 8px;
+        width: 100%;
+
+        .mat-mdc-select {
+          --mat-select-trigger-text-font: var(--font-family);
+          --mat-select-placeholder-text-color: var(--input-placeholder);
+          --mat-select-trigger-text-line-height: 16px;
+          --mat-select-trigger-text-size: 13px;
+          --mat-select-trigger-text-weight: 500;
+          --mat-select-trigger-text-tracking: 0px;
+          --mat-select-enabled-trigger-text-color: var(--input-text);
+
+          .mat-mdc-select-arrow-wrapper {
+            height: 28px;
+
+            .mat-mdc-select-arrow {
+              width: 18px;
+              height: 18px;
+
+              svg {
+                width: 18px;
+                height: 18px;
+              }
+            }
+          }
+        }
+
+        .mat-mdc-input-element {
+          --mdc-outlined-text-field-input-text-placeholder-color: var(--input-placeholder);
+          --mdc-outlined-text-field-input-text-color: var(--input-text);
+          --mdc-outlined-text-field-caret-color: var(--input-text);
+          --mdc-outlined-text-field-error-caret-color: var(--input-text);
+          height: 28px;
+        }
+
+        textarea {
+          padding: 4px 0;
+        }
+      }
+    }
+  }
+
+  &.mat-form-field-disabled {
+    .mat-mdc-form-field-icon-prefix {
+      opacity: 0.4;
+    }
+  }
+
+  .mat-mdc-form-field-subscript-wrapper {
+    display: none;
+  }
+}
+
+.cdk-overlay-container {
+
+  .cdk-overlay-connected-position-bounding-box {
+
+    .cdk-overlay-pane {
+      .mat-mdc-select-panel {
+        background-color: var(--context-menu-background);
+        border: var(--context-menu-border);
+        box-shadow: var(--context-menu-shadow);
+        border-radius: var(--context-menu-border-radius);
+        margin-top: 4px;
+        padding: 8px;
+
+        .mat-mdc-option {
+          --mat-option-selected-state-label-text-color: var(--input-option-text);
+          --mat-option-label-text-color: var(--input-option-text);
+          --mat-option-hover-state-layer-color: var(--context-menu-item-hovered-background);
+          --mat-option-focus-state-layer-color: var(--context-menu-item-hovered-background);
+          --mat-option-selected-state-layer-color: var(--input-option-selected-background);
+          padding: 0 8px;
+          min-height: 24px;
+          font-size: 13px;
+          line-height: 24px;
+          margin-bottom: 1px;
+          border-radius: 2px;
+
+          .mat-icon {
+            font-size: 11px;
+            width: 11px;
+            height: 11px;
+            line-height: 11px;
+            margin-right: 6px;
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          .mat-pseudo-checkbox {
+            width: 12px;
+            height: 12px;
+            margin-left: 6px;
+            --mat-minimal-pseudo-checkbox-selected-checkmark-color: var(--input-border-focused);
+
+            &:after {
+              width: 8px;
+              height: 4px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
