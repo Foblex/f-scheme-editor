@@ -1,8 +1,8 @@
 import { FormControl, FormGroup } from '@angular/forms';
 import { LodashExtensions, validateIntegerValues } from '@core';
-import { IFOverlayPanel } from '@ui-kit';
 import { IMixedValueForm } from './i-mixed-value-form';
 import { IMixedValue } from './i-mixed-value';
+import { FOverlayPanelComponent } from '@ui-kit';
 
 export class MixedPanelForm {
 
@@ -11,7 +11,7 @@ export class MixedPanelForm {
   private value!: IMixedValue;
 
   constructor(
-    private panel: IFOverlayPanel<IMixedValue>
+    private fPanel: FOverlayPanelComponent
   ) {
   }
 
@@ -29,7 +29,7 @@ export class MixedPanelForm {
     if (!this.isValueChanged()) {
       return;
     }
-    this.panel.setValue(this.getValue());
+    this.fPanel.setValue(this.getValue());
   }
 
   private validateValues(): void {

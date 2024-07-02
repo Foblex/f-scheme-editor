@@ -1,16 +1,15 @@
-<button f-icon-button class="f-overlay-panel-button" cdk-overlay-origin (click)="onOpen()"
-        #origin="cdkOverlayOrigin">
+<button f-icon-button class="f-overlay-panel-button" cdk-overlay-origin (click)="onOpen()" #origin="cdkOverlayOrigin">
   <ng-content select="[f-trigger]"></ng-content>
 </button>
 <ng-template cdk-connected-overlay
-             cdkConnectedOverlayLockPosition
-             cdkConnectedOverlayHasBackdrop
+             [cdkConnectedOverlayLockPosition]="true"
+             [cdkConnectedOverlayHasBackdrop]="true"
              cdkConnectedOverlayBackdropClass="cdk-overlay-transparent-backdrop"
-             [cdkConnectedOverlayOrigin]="origin"
+             [cdkConnectedOverlayOrigin]="preferredOverlayOrigin || origin"
              [cdkConnectedOverlayOpen]="isPanelVisible"
              [cdkConnectedOverlayPositions]="positions"
-             (attach)="onAttached()"
-             (backdropClick)="onClose()">
+             (attach)="attach()"
+             (backdropClick)="backdropClick()">
   <div class="f-overlay-panel"
        [@transformPanel]="'showing'"
        (@transformPanel.done)="onAnimationDone()">

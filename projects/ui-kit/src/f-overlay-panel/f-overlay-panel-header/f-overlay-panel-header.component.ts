@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
-import { FIconButtonComponent, FOverlayPanelComponent } from '@ui-kit';
+import { FOverlayPanelComponent } from '../f-overlay-panel.component';
+import { FIconButtonComponent } from '../../f-icon-button';
 
 @Component({
   selector: 'f-overlay-panel-header',

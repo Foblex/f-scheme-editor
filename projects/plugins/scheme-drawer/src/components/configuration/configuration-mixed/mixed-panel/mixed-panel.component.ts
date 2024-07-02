@@ -1,8 +1,6 @@
-import { ChangeDetectionStrategy, Component, Inject, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import {
-  F_OVERLAY_PANEL,
-  F_OVERLAY_PANEL_COMPONENT, FOverlayPanelHeaderComponent,
-  IFOverlayPanel,
+  F_OVERLAY_PANEL_COMPONENT, FOverlayPanelComponent, FOverlayPanelHeaderComponent,
   IFOverlayPanelComponent
 } from '@ui-kit';
 import { MatIcon } from '@angular/material/icon';
@@ -33,10 +31,10 @@ export class MixedPanelComponent implements IFOverlayPanelComponent<IMixedValue>
   @Input({ required: true })
   public configuration!: IMixedPanelConfiguration;
 
-  public formBuilder: MixedPanelForm = new MixedPanelForm(this.panel);
+  public formBuilder: MixedPanelForm = new MixedPanelForm(this.fPanel);
 
   constructor(
-    @Inject(F_OVERLAY_PANEL) public panel: IFOverlayPanel<IMixedValue>
+    public fPanel: FOverlayPanelComponent
   ) {
   }
 
