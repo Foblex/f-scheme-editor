@@ -5,6 +5,8 @@ You can use this example as a starting point for your own project.
 
 [DEMO](https://foblex.github.io/f-scheme-editor)
 
+<img src="example.png" width="500" >
+
 ## Used library capabilities
 
 - [x] Zoom (with mouse wheel, double click, and buttons)
