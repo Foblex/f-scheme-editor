@@ -24,7 +24,12 @@ export function createIconsRegistry(iconRegistry: MatIconRegistry, sanitizer: Do
   iconRegistry.addSvgIcon('visible', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/visible.svg'));
   iconRegistry.addSvgIcon('hidden', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/hidden.svg'));
 
+  iconRegistry.addSvgIcon('rotate', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/rotate.svg'));
+
   lineStyle(iconRegistry, sanitizer);
+  connectionTypes(iconRegistry, sanitizer);
+  connectionBehaviour(iconRegistry, sanitizer);
+  connectionMarkers(iconRegistry, sanitizer);
 }
 
 
@@ -49,4 +54,25 @@ function lineStyle(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer): void
   iconRegistry.addSvgIcon('line-style-dotted', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/line-style/dotted.svg'));
   iconRegistry.addSvgIcon('line-style-dashed', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/line-style/dashed.svg'));
   iconRegistry.addSvgIcon('line-style-solid', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/line-style/solid.svg'));
+}
+
+function connectionTypes(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer): void {
+  iconRegistry.addSvgIcon('connection-step', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/connection-types/step-line.svg'));
+  iconRegistry.addSvgIcon('connection-bezier', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/connection-types/bezier-line.svg'));
+  iconRegistry.addSvgIcon('connection-straight', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/connection-types/straight-line.svg'));
+}
+
+function connectionBehaviour(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer): void {
+  iconRegistry.addSvgIcon('behaviour-fixed', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/connection-behaviour/behaviour-fixed.svg'));
+  iconRegistry.addSvgIcon('behaviour-fixed-center', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/connection-behaviour/behaviour-fixed-center.svg'));
+  iconRegistry.addSvgIcon('behaviour-floating', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/connection-behaviour/behaviour-floating.svg'));
+}
+
+function connectionMarkers(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer): void {
+  iconRegistry.addSvgIcon('line', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/markers/line.svg'));
+  iconRegistry.addSvgIcon('arrow', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/markers/arrow.svg'));
+  iconRegistry.addSvgIcon('back-arrow', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/markers/back-arrow.svg'));
+  iconRegistry.addSvgIcon('thin-arrow', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/markers/thin-arrow.svg'));
+  iconRegistry.addSvgIcon('circle', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/markers/circle.svg'));
+  iconRegistry.addSvgIcon('rombed', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/markers/rombed.svg'));
 }

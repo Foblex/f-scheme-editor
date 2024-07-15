@@ -6,12 +6,13 @@ import {
   ElementRef,
   ViewChild
 } from '@angular/core';
-import { CdkConnectedOverlay, CdkOverlayOrigin, ConnectedPosition } from '@angular/cdk/overlay';
+import { CdkConnectedOverlay, CdkOverlayOrigin } from '@angular/cdk/overlay';
 import { MatFormField } from '@angular/material/form-field';
 import { AbstractControlDirective, NgControl } from '@angular/forms';
 import { matSelectAnimations } from '@angular/material/select';
 import { FImagePickerComponent } from './f-image-picker/f-image-picker.component';
-import { FColorPickerRectComponent } from './f-image-picker-rect/f-image-picker-rect.component';
+import { FOverlayPanelBase, IFImage } from '@ui-kit';
+import { FImagePickerPrefixComponent } from './f-image-picker-prefix/f-image-picker-prefix.component';
 
 @Component({
   selector: 'f-image-picker-overlay',
@@ -19,116 +20,48 @@ import { FColorPickerRectComponent } from './f-image-picker-rect/f-image-picker-
   styleUrls: [ './f-image-picker-overlay.component.scss' ],
   standalone: true,
   animations: [ matSelectAnimations.transformPanel ],
-  imports: [ CdkConnectedOverlay, CdkOverlayOrigin, FImagePickerComponent, FColorPickerRectComponent ],
+  imports: [ CdkConnectedOverlay, CdkOverlayOrigin, FImagePickerComponent, FImagePickerPrefixComponent ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FImagePickerOverlayComponent implements AfterViewInit {
-
-  public isPanelVisible: boolean = false;
-
-  public positions: ConnectedPosition[] = [
-    {
-      originX: 'start',
-      originY: 'bottom',
-      overlayX: 'start',
-      overlayY: 'top',
-    },
-    {
-      originX: 'end',
-      originY: 'bottom',
-      overlayX: 'end',
-      overlayY: 'top',
-    },
-    {
-      originX: 'start',
-      originY: 'top',
-      overlayX: 'start',
-      overlayY: 'bottom',
-      panelClass: 'mat-mdc-select-panel-above',
-    },
-    {
-      originX: 'end',
-      originY: 'top',
-      overlayX: 'end',
-      overlayY: 'bottom',
-      panelClass: 'mat-mdc-select-panel-above',
-    },
-  ];
+export class FImagePickerOverlayComponent extends FOverlayPanelBase implements AfterViewInit {
 
   @ViewChild(FImagePickerComponent, { static: false })
-  protected fColorPicker!: FImagePickerComponent;
+  protected fPickerComponent!: FImagePickerComponent;
 
-  @ViewChild(CdkConnectedOverlay, { static: true })
-  protected overlay!: CdkConnectedOverlay;
+  @ViewChild(FImagePickerPrefixComponent, { static: true })
+  protected fPrefixComponent!: FImagePickerPrefixComponent;
 
   private get ngControl(): NgControl | AbstractControlDirective {
     return this.inputContainer!._formFieldControl.ngControl!;
   }
 
-  public color: string = '#000000';
-
-  public preferredOverlayOrigin: CdkOverlayOrigin | ElementRef | undefined;
+  private image: IFImage | undefined;
 
   constructor(
-    private inputContainer: MatFormField,
-    private changeDetectorRef: ChangeDetectorRef
+    private inputContainer: MatFormField
   ) {
+    super();
   }
 
   public ngAfterViewInit(): void {
-    this.color = this.ngControl.value;
+    this.fPrefixComponent.draw(this.ngControl.value);
     this.changeDetectorRef.detectChanges();
   }
 
-  public onOpen(): void {
-    if (this.inputContainer._control.ngControl?.disabled) {
-      return;
-    }
-    if (this.inputContainer) {
-      this.preferredOverlayOrigin = this.inputContainer.getConnectedOverlayOrigin();
-    }
-
-    this.isPanelVisible = !this.isPanelVisible;
-    this.changeDetectorRef.detectChanges();
+  public override getConnectedOverlayOrigin(): ElementRef {
+    return this.inputContainer.getConnectedOverlayOrigin()!;
   }
 
-  public onAnimationDone(): void {
-
+  public override onAttach(): void {
+    this.fPickerComponent.image = this.ngControl.value;
   }
 
-  public onAttached(): void {
-    setTimeout(() => {
-      this.color = this.ngControl.value;
-      this.fColorPicker.color = this.color;
-
-      this.fColorPicker.setPresets([
-        '#FF4B4B', '#FF8282', '#B32323', '#1594EF',
-        '#FFC329', '#F75826', '#D5C2C2', '#000000',
-        '#A04EE1', '#19CD6C', '#4EA882', '#15B442',
-        '#249566', '#15CCC1', '#68D525', '#2A6C29',
-        '#00A0A0', '#FFAC4B', '#694DDB', '#2648FE',
-        '#F9F9F9', '#735F51', '#786848', '#88776D',
-      ]);
-    });
+  public override onBackdropClick(): void {
+    this.ngControl.control!.setValue(this.image);
   }
 
-  public onColorSelect(color: string): void {
-    this.overlay.backdropClick.emit();
-  }
-
-  public onClose(): void {
-    this.setValue(this.fColorPicker.color);
-    this.isPanelVisible = false;
-    this.changeDetectorRef.detectChanges();
-  }
-
-  public updateValue(color: string): void {
-    this.setValue(color);
-    this.changeDetectorRef.detectChanges();
-  }
-
-  private setValue(color: string): void {
-    this.color = color;
-    this.ngControl.control!.setValue(this.color);
+  public updateValue(value: IFImage): void {
+    this.image = value;
+    this.fPrefixComponent.draw(this.image);
   }
 }

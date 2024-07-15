@@ -1,22 +1,18 @@
-<f-color-picker-rect cdk-overlay-origin
-                     class="color-prefix"
-                     [color]="color"
-                     (click)="onOpen()"
-                     #fallbackOverlayOrigin="cdkOverlayOrigin">
-</f-color-picker-rect>
+<f-image-picker-prefix cdk-overlay-origin (click)="onOpen()" #origin="cdkOverlayOrigin">
+</f-image-picker-prefix>
 
 <ng-template cdk-connected-overlay
-             cdkConnectedOverlayLockPosition
-             cdkConnectedOverlayHasBackdrop
-             cdkConnectedOverlayBackdropClass="cdk-overlay-transparent-backdrop"
-             [cdkConnectedOverlayOrigin]="preferredOverlayOrigin || fallbackOverlayOrigin"
+             [cdkConnectedOverlayLockPosition]="true"
+             [cdkConnectedOverlayHasBackdrop]="true"
+             cdkConnectedOverlayBackdropClass="f-overlay-panel-backdrop"
+             [cdkConnectedOverlayOrigin]="preferredOverlayOrigin || origin"
              [cdkConnectedOverlayOpen]="isPanelVisible"
              [cdkConnectedOverlayPositions]="positions"
-             (attach)="onAttached()"
-             (backdropClick)="onClose()">
+             (attach)="attach()"
+             (backdropClick)="backdropClick()">
   <div class="f-overlay-panel"
        [@transformPanel]="'showing'"
        (@transformPanel.done)="onAnimationDone()">
-    <f-color-picker (onSelect)="onColorSelect($event)"></f-color-picker>
+    <f-image-picker (valueChange)="updateValue($event)"></f-image-picker>
   </div>
 </ng-template>

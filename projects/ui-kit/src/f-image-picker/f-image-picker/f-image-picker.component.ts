@@ -4,7 +4,11 @@ import {
   Component, EventEmitter, Input, OnDestroy, Output, ViewChild
 } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { FColorPickerRectComponent } from '@ui-kit';
+import { FImagePickerPreviewComponent } from '../f-image-picker-preview/f-image-picker-preview.component';
+import { defaultFImage, IFImage } from '../../f-common';
+import {
+  FImagePickerConfigurationComponent
+} from '../f-image-picker-configuration/f-image-picker-configuration.component';
 
 @Component({
   selector: 'f-image-picker',
@@ -12,81 +16,39 @@ import { FColorPickerRectComponent } from '@ui-kit';
   styleUrls: [ './f-image-picker.component.scss' ],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    FImagePickerPreviewComponent,
+    FImagePickerConfigurationComponent
+  ]
 })
 export class FImagePickerComponent implements AfterViewInit, OnDestroy {
 
   private subscriptions$: Subscription = new Subscription();
 
-  private value: string = '';
+  private value: IFImage = defaultFImage();
 
   @Input()
-  public set color(value: string) {
+  public set image(value: IFImage) {
     this.value = value;
     this.redraw();
   }
 
-
-  @ViewChild(FColorPickerSaturationComponent, { static: true })
-  public saturation?: FColorPickerSaturationComponent;
-
-  @ViewChild(FColorPickerHueComponent, { static: true })
-  public hue?: FColorPickerHueComponent;
-
-  @ViewChild(FColorPickerAlphaComponent, { static: true })
-  public alpha?: FColorPickerAlphaComponent;
-
-  @ViewChild(FColorPickerPresetComponent, { static: true })
-  public preset?: FColorPickerPresetComponent;
-
-  @ViewChild(FColorPickerRectComponent, { static: true })
-  public fColorRect?: FColorPickerRectComponent;
+  @ViewChild(FImagePickerConfigurationComponent, { static: true })
+  public fConfiguration?: FImagePickerConfigurationComponent;
 
   @Output()
-  public onSelect: EventEmitter<string> = new EventEmitter<string>();
+  public valueChange: EventEmitter<IFImage> = new EventEmitter<IFImage>();
 
   public ngAfterViewInit(): void {
     this.redraw();
-    this.subscriptions$.add(this.subscribeToSaturationChange());
-    this.subscriptions$.add(this.subscribeToHueChange());
-    this.subscriptions$.add(this.subscribeToAlphaChange());
   }
 
   private redraw(): void {
-    this.saturation!.color = this.value;
-    this.hue!.color = this.value;
-    this.alpha!.color = this.value;
-    this.fColorRect!.color = this.color;
+    this.fConfiguration!.image = this.value;
   }
 
-  private subscribeToSaturationChange(): Subscription {
-    return this.saturation!.onChange.subscribe((value) => {
-      this.value.s = value.s;
-      this.value.b = value.b;
-      this.redraw();
-    });
-  }
-
-  private subscribeToHueChange(): Subscription {
-    return this.hue!.onChange.subscribe((value) => {
-      this.value.h = value;
-      this.redraw();
-    });
-  }
-
-  private subscribeToAlphaChange(): Subscription {
-    return this.alpha!.onChange.subscribe((value) => {
-      this.value.a = value;
-      this.redraw();
-    });
-  }
-
-  public setPresets(colors: string[]): void {
-    this.preset!.setPresets(colors);
-  }
-
-  public onColorSelect(color: string): void {
-    this.color = color;
-    this.onSelect.emit(color);
+  public onValueChanged(value: IFImage): void {
+    this.valueChange.emit(value);
   }
 
   public ngOnDestroy(): void {

@@ -1,0 +1,58 @@
+<ng-template #start_arrow let-type="type" let-color="color">
+  <svg viewBox="0 0 6 7" fMarker [type]="type"
+       [height]="7" [width]="6"
+       [refX]="2" [refY]="3.5" markerUnits="strokeWidth" orient="auto">
+    <path d="M5.99961 7L0 3.5L5.99961 0V7Z" [attr.fill]="color"/>
+  </svg>
+</ng-template>
+<ng-template #start_back_arrow let-type="type" let-color="color">
+  <svg viewBox="0 0 6 7" fMarker [type]="type"
+       [height]="7" [width]="6"
+       [refX]="2" [refY]="3.5" markerUnits="strokeWidth" orient="auto">
+    <path d="M0.000391006 0L6 3.5L0.000391006 7L0.000391006 0Z" [attr.fill]="color"/>
+  </svg>
+</ng-template>
+<ng-template #start_circle let-type="type" let-color="color">
+  <svg viewBox="0 0 700 700" fMarker [type]="type"
+       [height]="5" [width]="5"
+       [refX]="2.5" [refY]="2.5" markerUnits="strokeWidth">
+    <circle cx="350" cy="350" r="350" [attr.fill]="color"/>
+  </svg>
+</ng-template>
+<ng-template #start_rhombus let-type="type" let-color="color">
+  <svg viewBox="0 0 9 9" fMarker [type]="type"
+       [height]="9" [width]="9"
+       [refX]="1.5" [refY]="4.2" markerUnits="strokeWidth">
+    <rect y="4.24219" width="6" height="6" transform="rotate(-45 0 4.24219)" [attr.fill]="color"/>
+  </svg>
+</ng-template>
+
+<ng-template #end_arrow let-type="type" let-color="color">
+  <svg viewBox="0 0 6 7" fMarker [type]="type"
+       [height]="7" [width]="6"
+       [refX]="4" [refY]="3.5" markerUnits="strokeWidth" orient="auto">
+    <path d="M0.000391006 0L6 3.5L0.000391006 7L0.000391006 0Z" [attr.fill]="color"/>
+  </svg>
+</ng-template>
+<ng-template #end_back_arrow let-type="type" let-color="color">
+  <svg viewBox="0 0 6 7" fMarker [type]="type"
+       [height]="7" [width]="6"
+       [refX]="4" [refY]="3.5" markerUnits="strokeWidth" orient="auto">
+    <path d="M5.99961 7L0 3.5L5.99961 0V7Z" [attr.fill]="color"/>
+  </svg>
+</ng-template>
+<ng-template #end_circle let-type="type" let-color="color">
+  <svg viewBox="0 0 700 700" fMarker [type]="type"
+       [height]="5" [width]="5"
+       [refX]="2.5" [refY]="2.5" markerUnits="strokeWidth">
+    <circle cx="350" cy="350" r="350" [attr.fill]="color"/>
+  </svg>
+</ng-template>
+<ng-template #end_rhombus let-type="type" let-color="color">
+  <svg viewBox="0 0 9 9" fMarker [type]="type"
+       [height]="9" [width]="9"
+       [refX]="7" [refY]="4.2" markerUnits="strokeWidth">
+    <rect y="4.24219" width="6" height="6" transform="rotate(-45 0 4.24219)" [attr.fill]="color"/>
+  </svg>
+</ng-template>
+

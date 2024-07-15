@@ -7,9 +7,8 @@ import {
   TemplateRef,
   ViewChild
 } from '@angular/core';
-import { ECommonMenuAction, EEntityType, EKeyboardEvent, IEntity, IEntityPlugin, PLUGIN_TOKEN } from '@core';
+import { EEntityType, EKeyboardEvent, IEntity, IEntityPlugin, PLUGIN_TOKEN } from '@core';
 import { ICONS, LOCALIZATION } from '@resources';
-import { MatMenu } from '@angular/material/menu';
 import { MatIcon } from '@angular/material/icon';
 import { CdkMenu, CdkMenuItem } from '@angular/cdk/menu';
 import { EntityIconPipe, EntityLocalizationPipe, ShortcutPipe } from '@ui-kit';

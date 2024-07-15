@@ -3,31 +3,5 @@
   flex-direction: column;
   overflow: hidden;
   width: 240px;
-  gap: 16px;
-  padding-bottom: 16px;
-
-  .hue-alpha-color {
-    padding: 0 16px;
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
-
-    f-color-picker-rect {
-      width: 32px;
-      height: 32px;
-      min-width: 32px;
-    }
-  }
-
-  .hue-alpha {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  f-color-picker-saturation {
-    height: 140px;
-  }
 }
 

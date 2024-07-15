@@ -13,7 +13,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/f-scheme-drawer",
+            "outputPath": "dist/f-scheme-editor",
+            "baseHref": "/f-scheme-editor/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [

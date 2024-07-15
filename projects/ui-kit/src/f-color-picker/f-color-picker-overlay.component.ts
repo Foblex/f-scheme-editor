@@ -19,7 +19,7 @@ import { FOverlayPanelBase } from '../f-overlay-panel';
 export class FColorPickerOverlayComponent extends FOverlayPanelBase implements AfterViewInit {
 
   @ViewChild(FColorPickerComponent, { static: false })
-  protected fColorPicker!: FColorPickerComponent;
+  protected fPickerComponent!: FColorPickerComponent;
 
   private get ngControl(): NgControl | AbstractControlDirective {
     return this.inputContainer!._formFieldControl.ngControl!;
@@ -44,9 +44,9 @@ export class FColorPickerOverlayComponent extends FOverlayPanelBase implements A
 
   public override onAttach(): void {
     this.color = this.ngControl.value;
-    this.fColorPicker.color = this.color;
+    this.fPickerComponent.color = this.color;
 
-    this.fColorPicker.setPresets([
+    this.fPickerComponent.setPresets([
       '#FF4B4B', '#FF8282', '#B32323', '#1594EF',
       '#FFC329', '#F75826', '#D5C2C2', '#000000',
       '#A04EE1', '#19CD6C', '#4EA882', '#15B442',
@@ -61,7 +61,7 @@ export class FColorPickerOverlayComponent extends FOverlayPanelBase implements A
   }
 
   public override onBackdropClick(): void {
-    this.setValue(this.fColorPicker.color);
+    this.setValue(this.fPickerComponent.color);
   }
 
   public updateValue(color: string): void {

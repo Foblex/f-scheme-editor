@@ -21,17 +21,20 @@
       "@resources": [
         "./projects/resources/src/public-api"
       ],
-      "@editor-container": [
-        "./projects/editor-container/src/public-api"
-      ],
       "@palette": [
         "./projects/plugins/palette/src/public-api"
       ],
       "@router-controller": [
         "./projects/router-controller/src/public-api"
       ],
+      "@foblex/core": [
+        "./projects/f-core/src/public-api"
+      ],
       "@foblex/flow": [
         "./projects/f-flow/src/public-api"
+      ],
+      "f-geometry": [
+        "./dist/f-geometry"
       ]
     },
     "noPropertyAccessFromIndexSignature": true,

@@ -1,4 +1,4 @@
-import { IPoint } from './i-point';
+import { IPoint } from '@foblex/core';
 
 export interface IPointerEvent {
 

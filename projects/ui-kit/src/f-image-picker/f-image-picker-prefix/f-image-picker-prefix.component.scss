@@ -1,0 +1,18 @@
+:host {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: block;
+  overflow: hidden;
+  outline: 1px solid rgba(0, 0, 0, 0.1);
+  width: 16px;
+  height: 16px;
+  border-radius: 1px;
+
+  f-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+

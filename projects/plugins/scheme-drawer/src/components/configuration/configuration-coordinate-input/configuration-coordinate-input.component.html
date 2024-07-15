@@ -1,7 +1,0 @@
-@if (control) {
-  <mat-form-field>
-    <div class="symbol-prefix" matPrefix>{{ control.prefix }}</div>
-    <input matInput [readonly]="true" [disabled]="true" (blur)="onBlur()" [formControl]="currentControl">
-  </mat-form-field>
-}
-

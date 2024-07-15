@@ -7,7 +7,7 @@ import { Subscription } from 'rxjs';
 import { ColorExtensions, HSBAToHexConverter, IHSBAColor, RGBAToHSBAConverter } from '../domain';
 import { FColorPickerHandleComponent } from '../f-color-picker-handle/f-color-picker-handle.component';
 import { IRect, RectExtensions } from '@foblex/core';
-import { FColorPickerRectDirective } from './f-color-picker-rect.directive';
+import { FAlphaColorSmallRectComponent } from '../../f-common';
 
 @Component({
   selector: 'f-color-picker-rect',
@@ -17,7 +17,7 @@ import { FColorPickerRectDirective } from './f-color-picker-rect.directive';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     FColorPickerHandleComponent,
-    FColorPickerRectDirective
+    FAlphaColorSmallRectComponent
   ]
 })
 export class FColorPickerRectComponent implements AfterViewInit, OnDestroy {

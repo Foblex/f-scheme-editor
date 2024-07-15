@@ -1,0 +1,34 @@
+:host {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  outline: none;
+
+  .flow-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+
+    --f-background-stroke: var(--gray13);
+    --f-background-fill: transparent;
+
+    background: var(--f-background-fill);
+  }
+}
+
+::ng-deep .f-flow {
+  .f-background {
+    line {
+      stroke: var(--f-background-stroke);
+    }
+
+    circle {
+      fill: var(--f-background-stroke);
+    }
+  }
+}
+

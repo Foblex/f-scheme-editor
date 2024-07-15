@@ -11,8 +11,8 @@ import { ResizableBoxHandleDirective } from './resizable-box-handle.directive';
 import { fromEvent, map, Subscription } from 'rxjs';
 import { IS_TOUCH_DEVICE } from './domain/is-touch-device.const';
 import { IPointerEvent } from './domain/i-pointer-event';
-import { IPoint } from './domain/i-point';
 import { EResizableSize } from './domain/e-resizable-size';
+import { IPoint } from '@foblex/core';
 
 @Directive({
   selector: '[resizable-box]',

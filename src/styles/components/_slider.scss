@@ -1,0 +1,141 @@
+html {
+  --mdc-slider-label-label-text-font: Roboto, sans-serif;
+  --mdc-slider-label-label-text-size: 14px;
+  --mdc-slider-label-label-text-line-height: 22px;
+  --mdc-slider-label-label-text-tracking: 0.0071428571em;
+  --mdc-slider-label-label-text-weight: 500;
+
+  --mdc-slider-handle-color: rgba(0, 0, 0, 0.8);
+  --mdc-slider-focus-handle-color: rgba(0, 0, 0, 0.8);
+  --mdc-slider-hover-handle-color: rgba(0, 0, 0, 0.8);
+  --mdc-slider-active-track-color: transparent;
+  --mdc-slider-inactive-track-color: transparent;
+  --mdc-slider-with-tick-marks-inactive-container-color: rgba(0, 0, 0, 0.8);
+  --mdc-slider-with-tick-marks-active-container-color: white;
+  --mdc-slider-disabled-active-track-color: #000;
+  --mdc-slider-disabled-handle-color: #000;
+  --mdc-slider-disabled-inactive-track-color: #000;
+  --mdc-slider-label-container-color: #000;
+  --mdc-slider-label-label-text-color: #fff;
+  --mdc-slider-with-overlap-handle-outline-color: #fff;
+  --mdc-slider-with-tick-marks-disabled-container-color: #000;
+  --mdc-slider-handle-elevation: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  --mat-slider-ripple-color: transparent;
+  --mat-slider-hover-state-layer-color: rgba(63, 81, 181, 0.05);
+  --mat-slider-focus-state-layer-color: rgba(63, 81, 181, 0.2);
+  --mat-slider-value-indicator-opacity: 0.6;
+
+  --mat-slider-value-indicator-width: auto;
+  --mat-slider-value-indicator-height: 32px;
+  --mat-slider-value-indicator-caret-display: block;
+  --mat-slider-value-indicator-border-radius: 4px;
+  --mat-slider-value-indicator-padding: 0 12px;
+  --mat-slider-value-indicator-text-transform: none;
+  --mat-slider-value-indicator-container-transform: translateX(-50%);
+  --mdc-slider-active-track-height: 2px;
+  --mdc-slider-active-track-shape: 9999px;
+  --mdc-slider-handle-height: 8px;
+  --mdc-slider-handle-shape: 50%;
+  --mdc-slider-handle-width: 8px;
+  --mdc-slider-inactive-track-height: 2px;
+  --mdc-slider-inactive-track-shape: 9999px;
+  --mdc-slider-with-overlap-handle-outline-width: 1px;
+  --mdc-slider-with-tick-marks-active-container-opacity: 0.6;
+  --mdc-slider-with-tick-marks-container-shape: 50%;
+  --mdc-slider-with-tick-marks-container-size: 2px;
+  --mdc-slider-with-tick-marks-inactive-container-opacity: 0.6;
+}
+
+.f-middle-slider {
+  position: relative !important;
+  height: 28px !important;
+  margin: 0 !important;
+  max-width: 60%;
+  width: 100%;
+
+  f-slider-indicator {
+    display: block;
+    height: 2px;
+    border-radius: 2px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    overflow: hidden;
+
+    .inactive {
+      background-color: #E5E5E5;
+      width: 100%;
+      height: 100%;
+    }
+
+    .active {
+      top: 0;
+      position: absolute;
+      background-color: var(--mdc-slider-handle-color);
+      height: 100%;
+    }
+  }
+
+  .mat-ripple {
+    opacity: 0;
+  }
+
+  .mdc-slider__thumb-knob {
+    outline: 1px solid white;
+  }
+
+  .mdc-slider__thumb {
+    height: 28px !important;
+    width: 28px !important;
+    left: -14px !important;
+  }
+}
+
+.f-slider {
+  --mdc-slider-active-track-color: rgba(0, 0, 0, 0.8);
+  --mdc-slider-inactive-track-color: #E5E5E5;
+  position: relative !important;
+  height: 28px !important;
+  margin: 0 !important;
+  max-width: 60%;
+  width: 100%;
+
+  f-slider-indicator {
+    display: block;
+    height: 2px;
+    border-radius: 2px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    overflow: hidden;
+
+    .inactive {
+      background-color: #E5E5E5;
+      width: 100%;
+      height: 100%;
+    }
+
+    .active {
+      top: 0;
+      position: absolute;
+      background-color: var(--mdc-slider-handle-color);
+      height: 100%;
+    }
+  }
+
+  .mat-ripple {
+    opacity: 0;
+  }
+
+  .mdc-slider__thumb-knob {
+    outline: 1px solid white;
+  }
+
+  .mdc-slider__thumb {
+    height: 28px !important;
+    width: 28px !important;
+    left: -14px !important;
+  }
+}

@@ -7,9 +7,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { EDITOR_ROUTES } from '../../projects/plugins/editor-routes';
-import { PalettePlugin } from '@palette';
-import { SchemePlugin } from '../../projects/plugins/scheme-drawer/src/scheme.plugin';
-import { ColorPickerModule } from '@iplab/ngx-color-picker';
+import { SchemePlugin } from '../../projects/plugins/scheme/src/scheme.plugin';
 import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
@@ -17,7 +15,6 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(EDITOR_ROUTES),
     provideAnimationsAsync(),
-    importProvidersFrom(ColorPickerModule),
     provideHttpClient(),
     { provide: PLUGIN_TOKEN, useClass: DirectoryPlugin, multi: true },
     // { provide: PLUGIN_TOKEN, useClass: PalettePlugin, multi: true },

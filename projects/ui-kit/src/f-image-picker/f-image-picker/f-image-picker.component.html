@@ -1,11 +1,3 @@
-<f-color-picker-saturation></f-color-picker-saturation>
-
-<div class="hue-alpha-color">
-  <f-color-picker-rect></f-color-picker-rect>
-  <div class="hue-alpha">
-    <f-color-picker-hue></f-color-picker-hue>
-    <f-color-picker-alpha></f-color-picker-alpha>
-  </div>
-</div>
-
-<f-color-picker-preset (onSelect)="onColorSelect($event)"></f-color-picker-preset>
+<f-image-picker-configuration (valueChange)="onValueChanged($event)">
+  <f-image-picker-preview></f-image-picker-preview>
+</f-image-picker-configuration>

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { EditorContainerComponent, EditorDrawerComponent } from '@editor-container';
+import { FEditorContainerComponent, FEditorDrawerComponent } from '@ui-kit';
 
 @Component({
   selector: 'palette-root',
@@ -8,8 +8,8 @@ import { EditorContainerComponent, EditorDrawerComponent } from '@editor-contain
   styleUrls: [ './palette-root.component.scss' ],
   standalone: true,
   imports: [
-    EditorContainerComponent,
-    EditorDrawerComponent
+    FEditorContainerComponent,
+    FEditorDrawerComponent
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })

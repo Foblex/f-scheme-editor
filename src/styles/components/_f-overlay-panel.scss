@@ -25,3 +25,14 @@
 .f-overlay-panel-button {
   padding: 6px;
 }
+
+.f-overlay-panel-backdrop {
+  transition: visibility 1ms linear, opacity 1ms linear;
+  visibility: hidden;
+  opacity: 1
+}
+
+.f-overlay-panel-backdrop.cdk-overlay-backdrop-showing {
+  opacity: 0;
+  visibility: visible
+}

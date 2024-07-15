@@ -1,0 +1,45 @@
+<form [formGroup]="formGroup">
+
+  <div class="f-image-picker-configuration-header">
+    <mat-form-field>
+      <mat-select formControlName="mode">
+        @for (option of imageModes;track option.id) {
+          <mat-option [value]="option.id">
+            {{ option.name }}
+          </mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+    <div class="flex-space"></div>
+    <button f-icon-button class="f-overlay-panel-header-action" (click)="rotateImage()">
+      <mat-icon [svgIcon]="'rotate'"></mat-icon>
+    </button>
+  </div>
+
+  <div class="f-image-picker-preview">
+    <ng-content></ng-content>
+    <div class="f-upload-section" [class.f-existing]="!!formGroup.controls['src'].value">
+      <div class="f-image-backdrop"></div>
+      <f-load-image [formGroup]="formGroup">
+        <button f-white-button>Choose image</button>
+      </f-load-image>
+    </div>
+  </div>
+
+  <div class="f-configuration-sliders">
+    @for (slider of sliders;track slider.key) {
+      <div class="f-configuration-row">
+        <div class="f-configuration-label">{{ slider.key }}</div>
+        <mat-slider [class]="slider.class" [min]="slider.min" [max]="slider.max" step="1">
+          @if (slider.class === 'f-middle-slider') {
+            <f-slider-indicator></f-slider-indicator>
+          }
+          <input matSliderThumb [formControlName]="slider.key">
+        </mat-slider>
+      </div>
+    }
+  </div>
+</form>
+
+
+

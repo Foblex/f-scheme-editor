@@ -1,0 +1,6 @@
+@if (control) {
+  <mat-form-field>
+    <f-image-picker-overlay matPrefix></f-image-picker-overlay>
+    <input matInput fImagePickerInput readonly [formControl]="control.formControl">
+  </mat-form-field>
+}

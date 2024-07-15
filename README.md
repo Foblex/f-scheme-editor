@@ -1,27 +1,41 @@
-# FSchemeDrawer
+# CallCenter Flow Example
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
+This is an example of using the [@foblex/flow](https://github.com/Foblex/f-flow) library in an Angular project.
+You can use this example as a starting point for your own project.
+
+[DEMO](https://foblex.github.io/f-scheme-editor)
+
+<img src="example.png" width="500" >
+
+[LINK](https://github.com/Foblex/f-flow-example/assets/13272876/2bb7a1ca-bd5d-44d6-82a3-a0bc935e91f7)
+
+## Used library capabilities
+
+- [x] Zoom (with mouse wheel, double click, and buttons)
+- [x] Select elements (single selection using the mouse, multiple selection using the Shift key and the mouse)
+- [x] Drag and drop
+- [x] Create new connections
+- [x] Reassign connections
+- [x] Connection text
+- [x] Change connection markers
+- [x] Change connection type
+- [x] Change connection behavior
+- [x] Change connection style
+- [x] Change connection text
+- [x] Create new nodes using drag and drop from the palette
+- [x] Draggable background
+- [x] Change background
+
+## Installation
+
+Run `npm install` to install the required packages.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## License
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This example is distributed under the MIT License. See the LICENSE file for more information.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

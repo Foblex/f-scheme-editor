@@ -1,0 +1,11 @@
+:host {
+  max-width: 100%;
+
+}
+
+::ng-deep configuration-textarea {
+  .mat-mdc-form-field-flex {
+    border-radius: 2px;
+    background-color: var(--gray13) !important;
+  }
+}

@@ -11,6 +11,7 @@ import { ResizableBoxDirective, ResizableBoxHandleDirective } from '@ui-kit';
 import { MatIconRegistry } from '@angular/material/icon';
 import { ExplorerPanelComponent } from '@explorer-panel';
 import { createIconsRegistry } from './icons-registry';
+
 @Component({
   selector: 'app-root',
   standalone: true,

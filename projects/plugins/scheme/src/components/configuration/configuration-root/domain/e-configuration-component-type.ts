@@ -1,0 +1,26 @@
+export enum EConfigurationComponentType {
+
+  SECTION = 'SECTION',
+
+  ROW = 'ROW',
+
+  INPUT = 'INPUT',
+
+  COORDINATE_INPUT = 'COORDINATE_INPUT',
+
+  TEXT_AREA = 'TEXT_AREA',
+
+  SELECT = 'SELECT',
+
+  MARKER_DROP_DOWN = 'MARKER_DROP_DOWN',
+
+  CHECKBOX = 'CHECKBOX',
+
+  COLOR = 'COLOR',
+
+  IMAGE = 'IMAGE',
+
+  MIXED_PANEL = 'MIXED_PANEL',
+
+  VISIBILITY = 'VISIBILITY'
+}

@@ -3,21 +3,7 @@
   width: 100%;
   height: 100%;
 
-  .f-background {
-    --f-background-stroke: var(--gray13);
-    --f-background-fill: transparent;
 
-    background: var(--f-background-fill);
-
-    line {
-      stroke: var(--f-background-stroke);
-    }
-
-    circle {
-      fill: var(--f-background-stroke);
-    }
-
-  }
 
   .f-line-alignment {
     .f-line {

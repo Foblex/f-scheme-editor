@@ -127,6 +127,20 @@
 }
 
 [f-icon-button] {
+  width: 28px;
+  height: 28px;
+  border-radius: 2px;
+  margin: 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  padding: 6px;
+  color: rgba(0, 0, 0, 0.7);
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
 
   .mat-icon {
     width: 16px;
@@ -134,4 +148,28 @@
     display: block;
     color: inherit;
   }
+}
+
+@mixin f-button($color, $active) {
+  border-radius: 4px;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  padding: 8px;
+  outline: 1px solid $color;
+  color: $color;
+
+  &:active {
+    outline: 2px solid $active;
+    color: $active;
+  }
+}
+
+[f-button] {
+  @include f-button(rgba(0, 0, 0, 0.8), var(--blue4));
+}
+
+[f-white-button] {
+  @include f-button(white, var(--blue4));
 }

@@ -21,9 +21,8 @@ export abstract class IDragAndDropBase {
   private startListeners: Function = EventExtensions.emptyListener();
 
   public isSyntheticEvent(event: MouseEvent): boolean {
-    const isSyntheticEvent = !!this.lastTouchEventTime &&
-        (this.lastTouchEventTime + MOUSE_EVENT_IGNORE_TIME > Date.now());
-    return isSyntheticEvent;
+    return !!this.lastTouchEventTime &&
+      (this.lastTouchEventTime + MOUSE_EVENT_IGNORE_TIME > Date.now());
   }
 
   private lastTouchEventTime: number = 0;
