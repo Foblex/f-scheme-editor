@@ -1,13 +1,9 @@
-# Graph editor with step-by-step animations
+# Scheme editor with step-by-step animations using @foblex/flow
 
 This is an example of using the [@foblex/flow](https://github.com/Foblex/f-flow) library in an Angular project.
 You can use this example as a starting point for your own project.
 
 [DEMO](https://foblex.github.io/f-scheme-editor)
-
-<img src="example.png" width="500" >
-
-[LINK](https://github.com/Foblex/f-flow-example/assets/13272876/2bb7a1ca-bd5d-44d6-82a3-a0bc935e91f7)
 
 ## Used library capabilities
 
