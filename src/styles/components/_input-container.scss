@@ -23,18 +23,18 @@
       background-color: white;
 
       .mdc-notched-outline {
-        --mdc-filled-text-field-active-indicator-height: 1px;
-        --mdc-filled-text-field-container-shape: 2px;
-        --mdc-outlined-text-field-outline-width: 1px;
-        --mdc-outlined-text-field-focus-outline-width: 1px;
-        --mdc-outlined-text-field-container-shape: 2px;
-        --mdc-outlined-text-field-outline-color: transparent;
-        --mdc-outlined-text-field-hover-outline-color: var(--input-dialog-border-normal);
-        --mdc-outlined-text-field-focus-outline-color: var(--input-border-focused);
-        --mdc-outlined-text-field-error-outline-color: var(--input-border-not-focused-has-errors);
-        --mdc-outlined-text-field-error-hover-outline-color: var(--input-border-not-focused-has-errors);
-        --mdc-outlined-text-field-error-focus-outline-color: var(--input-border-focused-has-errors);
-        --mdc-outlined-text-field-disabled-outline-color: transparent; //var(--input-border-disabled);
+        --mat-form-field-filled--active-indicator-height: 1px;
+        --mat-form-field-filled-container-shape: 2px;
+        --mat-form-field-outlined-outline-width: 1px;
+        --mat-form-field-outlined-focus-outline-width: 1px;
+        --mat-form-field-outlined-container-shape: 2px;
+        --mat-form-field-outlined-outline-color: transparent;
+        --mat-form-field-outlined-hover-outline-color: var(--input-dialog-border-normal);
+        --mat-form-field-outlined-focus-outline-color: var(--input-border-focused);
+        --mat-form-field-outlined-error-outline-color: var(--input-border-not-focused-has-errors);
+        --mat-form-field-outlined-error-hover-outline-color: var(--input-border-not-focused-has-errors);
+        --mat-form-field-outlined-error-focus-outline-color: var(--input-border-focused-has-errors);
+        --mat-form-field-outlined-disabled-outline-color: transparent; //var(--input-border-disabled);
       }
 
       .mat-mdc-form-field-icon-prefix {

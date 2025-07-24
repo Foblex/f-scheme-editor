@@ -1,14 +1,14 @@
 $size: 12px;
 
 .mat-mdc-checkbox {
-  --mdc-checkbox-state-layer-size: $size;
+  --mat-checkbox-state-layer-size: $size;
   --mat-checkbox-touch-target-display: block;
-  --mdc-form-field-label-text-font: var(--font-family);
-  --mdc-form-field-label-text-line-height: $size;
-  --mdc-form-field-label-text-size: 13px;
-  --mdc-form-field-label-text-tracking: 0;
-  --mdc-form-field-label-text-weight: 400;
-  --mdc-checkbox-selected-checkmark-color: white;
+  --mat-checkbox-label-text-font: var(--font-family);
+  --mat-checkbox-label-text-line-height: $size;
+  --mat-checkbox-label-text-size: 13px;
+  --mat-checkbox-label-text-tracking: 0;
+  --mat-checkbox-label-text-weight: 400;
+  --mat-checkbox-selected-checkmark-color: white;
 
   font-family: var(--font-family);
   font-size: 13px;

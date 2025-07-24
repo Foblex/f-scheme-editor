@@ -14,8 +14,6 @@ import { IConfigurationComponent } from '../configuration-component';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     ConfigurationRowRenderer,
-    FIconButtonComponent,
-    MatIcon,
     ConfigurationVisibilityButtonComponent
   ],
   host: {
