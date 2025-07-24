@@ -12,7 +12,7 @@ Additionally, this example integrates:
 
 [DEMO](https://foblex.github.io/f-scheme-editor)
 
-<p align="center">
+<p >
   <img src="example.png" width="600" alt="Foblex Flow Example Screenshot" />
 </p>
 
@@ -24,7 +24,7 @@ Additionally, this example integrates:
 
 You can also watch a short demo video (example.mov) available in the repository:
 
-[LINK](https://github.com/Foblex/f-flow-example/assets/13272876/2bb7a1ca-bd5d-44d6-82a3-a0bc935e91f7)
+[LINK](https://youtu.be/G66MoUwrIbo)
 
 ## Used library capabilities
 
