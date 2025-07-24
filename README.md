@@ -1,11 +1,30 @@
-# Scheme editor with step-by-step animations using @foblex/flow
+# 🧩 Visual Scheme Editor Example using @foblex/flow
 
-This is an example of using the [@foblex/flow](https://github.com/Foblex/f-flow) library in an Angular project.
-You can use this example as a starting point for your own project.
+This project demonstrates how to build an interactive **node-based diagram editor** using the [@foblex/flow](https://github.com/Foblex/f-flow) Angular library.
+
+It includes features such as zooming, drag & drop, node creation, customizable connections, and full control over layout and behavior.
+
+Additionally, this example integrates:
+- ✅ Persistent **localStorage** state saving
+- 🎨 Custom **color picker** (inspired by Figma)
+- 🖼️ Custom **image picker** for background or node assets
+- 🧱 UI components built using **Angular Material**
 
 [DEMO](https://foblex.github.io/f-scheme-editor)
 
-<img src="example.png" width="500" >
+<p align="center">
+  <img src="example.png" width="600" alt="Foblex Flow Example Screenshot" />
+</p>
+
+<!-- Video available in the repository -->
+
+---
+
+### 🎬 Preview (Video)
+
+You can also watch a short demo video (example.mov) available in the repository:
+
+https://github.com/Foblex/f-scheme-editor/assets/example.mov
 
 ## Used library capabilities
 
@@ -23,6 +42,10 @@ You can use this example as a starting point for your own project.
 - [x] Create new nodes using drag and drop from the palette
 - [x] Draggable background
 - [x] Change background
+- [x] Save/load flow state from localStorage
+- [x] Custom image picker (like in Figma)
+- [x] Custom color picker
+- [x] Angular Material UI components
 
 ## Installation
 
@@ -35,5 +58,3 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 ## License
 
 This example is distributed under the MIT License. See the LICENSE file for more information.
-
-
