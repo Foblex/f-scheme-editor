@@ -1,7 +1,8 @@
 import { Directive, ElementRef } from '@angular/core';
-import { DomElementExtensions, IHasHostElement } from '@foblex/core';
 import { ExplorerPanelItemComponent } from '../../components';
 import { ITreeItem } from '../../domain';
+import {IHasHostElement} from "@foblex/flow";
+import {deepCloneNode} from "@foblex/utils";
 
 @Directive({
   selector: '[epDragHandle]',
@@ -24,7 +25,7 @@ export class DragHandleDirective implements IHasHostElement {
   }
 
   public cloneDomElement(): HTMLElement {
-    return DomElementExtensions.deepCloneNode(this.hostElement);
+    return deepCloneNode(this.hostElement);
   }
 }
 

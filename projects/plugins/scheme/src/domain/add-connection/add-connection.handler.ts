@@ -3,10 +3,11 @@ import { Observable, of, switchMap } from 'rxjs';
 import { IScheme } from '../i-scheme';
 import { AddConnectionRequest } from './add-connection.request';
 import { EEntityType, IEntitySummary, StorageService } from '@core';
-import { GuidExtensions, IHandler } from '@foblex/core';
 import { ISchemeConnection } from '../i-scheme-connection';
 import { EFConnectableSide, EFConnectionBehavior, EFConnectionType } from '@foblex/flow';
 import { defaultConnectionStyle, defaultTextStyle, EConnectionMarker } from '../../components/configuration';
+import {IHandler} from "@foblex/mediator";
+import {generateGuid} from "@foblex/utils";
 
 @Injectable()
 export class AddConnectionHandler implements IHandler<AddConnectionRequest, Observable<IEntitySummary>> {
@@ -28,7 +29,7 @@ export class AddConnectionHandler implements IHandler<AddConnectionRequest, Obse
 
   private createConnectionModel(request: AddConnectionRequest): ISchemeConnection {
     return {
-      key: GuidExtensions.generate(),
+      key: generateGuid(),
       behaviour: EFConnectionBehavior.FLOATING,
       type: EFConnectionType.STRAIGHT,
       connectionSideStart: EFConnectableSide.AUTO,

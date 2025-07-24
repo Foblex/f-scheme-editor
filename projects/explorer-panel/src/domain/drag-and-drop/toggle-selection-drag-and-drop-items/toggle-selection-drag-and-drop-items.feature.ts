@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { IHandler, MouseEventExtensions } from '@foblex/core';
 import { IToggleSelectionDragAndDropItemsRequest } from './i-toggle-selection-drag-and-drop-items-request';
 import { SelectionService } from '../../../services';
+import {MouseEventExtensions} from "@foblex/utils";
+import {IHandler} from "@foblex/mediator";
 
 const SELECTED_ITEM_CLASS: string = 'explorer-panel-tree-item-selected';
 

@@ -1,4 +1,3 @@
-import { IHandler } from '@foblex/core';
 import { Injectable } from '@angular/core';
 import { GetSchemeViewModelRequest } from './get-scheme-view-model.request';
 import { Observable } from 'rxjs';
@@ -8,6 +7,7 @@ import { EEntityType, SessionStateService, StorageService } from '@core';
 import { ISchemeViewModel } from '../i-scheme-view-model';
 import { IScheme } from '../i-scheme';
 import { ISchemeEditorVisualState } from '../i-scheme-editor-visual-state';
+import {IHandler} from "@foblex/mediator";
 
 @Injectable()
 export class GetSchemeViewModelHandler

@@ -1,4 +1,4 @@
-import { ISize } from '@foblex/core';
+import {ISize} from "@foblex/2d";
 
 export function drawAlphaLine(canvas: HTMLCanvasElement, size: ISize, gradientStart: string, gradientEnd: string): void {
   const context = getContext(canvas);

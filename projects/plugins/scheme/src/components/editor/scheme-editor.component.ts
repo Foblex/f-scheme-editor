@@ -6,39 +6,39 @@ import {
   OnDestroy, OnInit, Output,
   ViewChild,
 } from '@angular/core';
-import { merge, Subject, Subscription, take } from 'rxjs';
+import {merge, Subject, Subscription, take} from 'rxjs';
 import {
   ESchemeBackground,
   ISchemeNodeViewModel,
   ISchemeViewModel
 } from '../../domain';
-import { SchemeApiService } from '../../domain';
+import {SchemeApiService} from '../../domain';
 import {
   EFConnectionBehavior, EFMarkerType, FCanvasChangeEvent,
   FCanvasComponent, FCreateConnectionEvent, FCreateNodeEvent,
   FFlowComponent, FFlowModule, FReassignConnectionEvent, FSelectionChangeEvent,
   FZoomDirective
 } from '@foblex/flow';
-import { SchemeEditorToolbarComponent } from '../toolbar/scheme-editor-toolbar.component';
-import { SchemeEditorPaletteComponent } from '../palette/scheme-editor-palette.component';
-import { startWith } from 'rxjs/operators';
-import { NgTemplateOutlet } from '@angular/common';
-import { SNodeComponent } from '../node/s-node.component';
-import { IPoint, IRect, Point, RectExtensions } from '@foblex/core';
-import { ConnectionMarkersComponent } from '../markers/connection-markers.component';
-import { SchemeEditorClassListService } from './scheme-editor-class-list.service';
-import { SConnectionTextStyleDirective } from './s-connection-text-style.directive';
-import { SBackgroundStyleDirective } from './s-background-style.directive';
-import { FEditorContainerEvents } from '@ui-kit';
-import { EConnectionMarker } from '../configuration';
+import {SchemeEditorToolbarComponent} from '../toolbar/scheme-editor-toolbar.component';
+import {SchemeEditorPaletteComponent} from '../palette/scheme-editor-palette.component';
+import {startWith} from 'rxjs/operators';
+import {NgTemplateOutlet} from '@angular/common';
+import {SNodeComponent} from '../node/s-node.component';
+import {ConnectionMarkersComponent} from '../markers/connection-markers.component';
+import {SchemeEditorClassListService} from './scheme-editor-class-list.service';
+import {SConnectionTextStyleDirective} from './s-connection-text-style.directive';
+import {SBackgroundStyleDirective} from './s-background-style.directive';
+import {FEditorContainerEvents} from '@ui-kit';
+import {EConnectionMarker} from '../configuration';
+import {IPoint, IRect, Point, RectExtensions} from "@foblex/2d";
 
 @Component({
   selector: 'scheme-editor',
   templateUrl: './scheme-editor.component.html',
-  styleUrls: [ './scheme-editor.component.scss' ],
+  styleUrls: ['./scheme-editor.component.scss'],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [ SchemeEditorClassListService ],
+  providers: [SchemeEditorClassListService],
   imports: [
     FFlowModule,
     SchemeEditorToolbarComponent,
@@ -56,7 +56,7 @@ export class SchemeEditorComponent implements OnInit, OnDestroy {
 
   protected _key!: string;
 
-  @Input({ required: true })
+  @Input({required: true})
   public set key(key: string) {
     this._key = key;
     this.hasChanges$.next();
@@ -68,13 +68,13 @@ export class SchemeEditorComponent implements OnInit, OnDestroy {
 
   public viewModel: ISchemeViewModel | null = null;
 
-  @ViewChild(FFlowComponent, { static: false })
+  @ViewChild(FFlowComponent, {static: false})
   public fFlowComponent!: FFlowComponent;
 
-  @ViewChild(FCanvasComponent, { static: false })
+  @ViewChild(FCanvasComponent, {static: false})
   public fCanvasComponent!: FCanvasComponent;
 
-  @ViewChild(FZoomDirective, { static: false })
+  @ViewChild(FZoomDirective, {static: false})
   public fZoomDirective!: FZoomDirective;
 
   private hasChanges$: Subject<void> = new Subject<void>();
@@ -122,7 +122,7 @@ export class SchemeEditorComponent implements OnInit, OnDestroy {
   }
 
   public onLoaded(): void {
-    if(this.viewModel?.visualState.position) {
+    if (this.viewModel?.visualState.position) {
       return;
     }
     this.fCanvasComponent?.fitToScreen(new Point(10, 10), false);
@@ -145,7 +145,10 @@ export class SchemeEditorComponent implements OnInit, OnDestroy {
   }
 
   public onReassignConnection(event: FReassignConnectionEvent): void {
-    this.apiService.reassignConnection(this.key, event.connectionId, event.newFInputId).pipe(take(1)).subscribe(() => {
+    if (!event.newTargetId) {
+      return;
+    }
+    this.apiService.reassignConnection(this.key, event.connectionId, event.newTargetId).pipe(take(1)).subscribe(() => {
       this.hasChanges$.next();
     });
   }

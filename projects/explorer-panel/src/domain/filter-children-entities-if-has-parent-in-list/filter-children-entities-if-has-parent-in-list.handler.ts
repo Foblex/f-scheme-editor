@@ -1,9 +1,9 @@
 import {
   FilterChildrenEntitiesIfHasParentInListRequest
 } from './filter-children-entities-if-has-parent-in-list.request';
-import { IHandler } from '@foblex/core';
 import { ITreeItem } from '../i-tree-item';
 import { ROOT_DIRECTORY_KEY } from '@core';
+import {IHandler} from "@foblex/mediator";
 
 export class FilterChildrenEntitiesIfHasParentInListHandler
   implements IHandler<FilterChildrenEntitiesIfHasParentInListRequest, ITreeItem[]> {

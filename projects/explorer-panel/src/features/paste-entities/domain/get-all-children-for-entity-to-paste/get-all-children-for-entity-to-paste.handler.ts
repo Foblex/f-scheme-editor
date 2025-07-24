@@ -1,7 +1,7 @@
 import { GetAllChildrenForEntityToPasteRequest } from './get-all-children-for-entity-to-paste.request';
-import { GuidExtensions, IHandler } from '@foblex/core';
 import { IEntity } from '@core';
-
+import {generateGuid} from "@foblex/utils";
+import {IHandler} from "@foblex/mediator";
 
 export class GetAllChildrenForEntityToPasteHandler
     implements IHandler<GetAllChildrenForEntityToPasteRequest, IEntity[]> {
@@ -13,7 +13,7 @@ export class GetAllChildrenForEntityToPasteHandler
   private findAllChildren(entity: IEntity, allEntities: IEntity[]): IEntity[] {
     const oldKey = entity.key;
 
-    entity.key = GuidExtensions.generate();
+    entity.key = generateGuid();
 
     const children = allEntities.filter((x) => {
       return x.parentKey === oldKey;

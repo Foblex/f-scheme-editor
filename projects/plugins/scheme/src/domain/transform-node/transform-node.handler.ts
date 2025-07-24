@@ -3,7 +3,7 @@ import { Observable, of, switchMap } from 'rxjs';
 import { IScheme } from '../i-scheme';
 import { TransformNodeRequest } from './transform-node.request';
 import { EEntityType, IEntitySummary, StorageService } from '@core';
-import { IHandler } from '@foblex/core';
+import {IHandler} from "@foblex/mediator";
 
 @Injectable()
 export class TransformNodeHandler implements IHandler<TransformNodeRequest, Observable<IEntitySummary>> {

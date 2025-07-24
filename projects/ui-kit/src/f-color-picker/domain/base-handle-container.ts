@@ -1,5 +1,5 @@
 import { ElementRef, inject, Renderer2 } from '@angular/core';
-import { IPoint, IRect, RectExtensions } from '@foblex/core';
+import {IPoint, IRect, RectExtensions} from "@foblex/2d";
 
 export abstract class BaseHandleContainer {
 

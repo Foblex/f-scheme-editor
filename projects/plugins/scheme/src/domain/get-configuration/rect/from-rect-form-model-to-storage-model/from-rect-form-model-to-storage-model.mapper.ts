@@ -1,6 +1,6 @@
-import { IHandler } from '@foblex/core';
 import { FromRectFormModelToStorageModelRequest } from './from-rect-form-model-to-storage-model.request';
 import { IRectStyle } from '../../../../components/configuration';
+import {IHandler} from "@foblex/mediator";
 
 export class FromRectFormModelToStorageModelMapper implements IHandler<FromRectFormModelToStorageModelRequest, IRectStyle> {
 

@@ -1,9 +1,10 @@
 import { CopyEntitiesRequest } from './copy-entities-request';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { GuidExtensions, IHandler } from '@foblex/core';
 import { ClipboardService, IEntity, LodashExtensions, StorageService } from '@core';
 import { EP_CLIPBOARD_TOKEN } from '../../../../domain';
+import {IHandler} from "@foblex/mediator";
+import {generateGuid} from "@foblex/utils";
 
 @Injectable()
 export class CopyEntitiesHandler
@@ -30,7 +31,7 @@ export class CopyEntitiesHandler
   private regenerateIds(entities: IEntity[]) {
     entities.forEach((entity) => {
       const oldKey = entity.key;
-      entity.key = GuidExtensions.generate();
+      entity.key = generateGuid();
       entities.filter((x) => x.parentKey === oldKey).forEach((x) => x.parentKey = entity.key);
     });
   }

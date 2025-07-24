@@ -16,8 +16,8 @@ import {
   IHSBAColor,
   validateHSBA
 } from '../domain';
-import { IPoint, RectExtensions } from '@foblex/core';
 import { FColorPickerRectDirective } from './f-color-picker-hue.directive';
+import {IPoint, RectExtensions} from "@foblex/2d";
 
 @Component({
   selector: `f-color-picker-hue`,

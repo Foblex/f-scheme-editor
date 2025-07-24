@@ -1,7 +1,7 @@
-import { IHandler } from '@foblex/core';
-import { from, Observable } from 'rxjs';
-import { DB_STORE_NAME } from '../constants';
-import { EditObjectPromiseRequest } from './edit-object-promise.request';
+import {from, Observable} from 'rxjs';
+import {DB_STORE_NAME} from '../constants';
+import {EditObjectPromiseRequest} from './edit-object-promise.request';
+import {IHandler} from "@foblex/mediator";
 
 export class EditObjectPromiseHandler<TData> implements IHandler<EditObjectPromiseRequest<TData>, Observable<void>> {
 

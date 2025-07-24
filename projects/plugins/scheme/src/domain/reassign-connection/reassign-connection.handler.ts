@@ -3,7 +3,7 @@ import { Observable, of, switchMap } from 'rxjs';
 import { IScheme } from '../i-scheme';
 import { ReassignConnectionRequest } from './reassign-connection.request';
 import { EEntityType, IEntitySummary, StorageService } from '@core';
-import { IHandler } from '@foblex/core';
+import {IHandler} from "@foblex/mediator";
 
 @Injectable()
 export class ReassignConnectionHandler implements IHandler<ReassignConnectionRequest, Observable<IEntitySummary>> {

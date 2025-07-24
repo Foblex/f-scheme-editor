@@ -14,7 +14,7 @@ import {
   Z
 } from '@angular/cdk/keycodes';
 import { EKeyboardEvent } from './e-keyboard-event';
-import { MouseEventExtensions } from '@foblex/core';
+import {MouseEventExtensions} from "@foblex/utils";
 
 export function getKeyboardEvent(event: KeyboardEvent): EKeyboardEvent | undefined {
   let result: EKeyboardEvent | undefined;
@@ -26,60 +26,60 @@ export function getKeyboardEvent(event: KeyboardEvent): EKeyboardEvent | undefin
       result = EKeyboardEvent.REMOVE;
       break;
     case NUMPAD_PLUS:
-      if (MouseEventExtensions.isCommandButton(event)) {
+      if (MouseEventExtensions.isCommandButton(event.metaKey, event)) {
         result = EKeyboardEvent.ZOOM_IN;
       }
       break;
     case EQUALS:
-      if (MouseEventExtensions.isCommandButton(event)) {
+      if (MouseEventExtensions.isCommandButton(event.metaKey, event)) {
         result = EKeyboardEvent.ZOOM_IN;
       }
       break;
     case NUMPAD_MINUS:
-      if (MouseEventExtensions.isCommandButton(event)) {
+      if (MouseEventExtensions.isCommandButton(event.metaKey, event)) {
         result = EKeyboardEvent.ZOOM_OUT;
       }
       break;
     case DASH:
-      if (MouseEventExtensions.isCommandButton(event)) {
+      if (MouseEventExtensions.isCommandButton(event.metaKey, event)) {
         result = EKeyboardEvent.ZOOM_OUT;
       }
       break;
     case C:
-      if (MouseEventExtensions.isCommandButton(event)) {
+      if (MouseEventExtensions.isCommandButton(event.metaKey, event)) {
         result = EKeyboardEvent.COPY;
       }
       break;
     case V:
-      if (MouseEventExtensions.isCommandButton(event)) {
+      if (MouseEventExtensions.isCommandButton(event.metaKey, event)) {
         result = EKeyboardEvent.PASTE;
       }
       break;
     case Z:
-      if (MouseEventExtensions.isCommandButton(event)) {
+      if (MouseEventExtensions.isCommandButton(event.metaKey, event)) {
         result = EKeyboardEvent.UNDO;
       }
       break;
     case F:
-      if (MouseEventExtensions.isCommandButton(event)) {
+      if (MouseEventExtensions.isCommandButton(event.metaKey, event)) {
         result = EKeyboardEvent.SEARCH;
       }
       break;
     case A:
-      if (MouseEventExtensions.isCommandButton(event)) {
+      if (MouseEventExtensions.isCommandButton(event.metaKey, event)) {
         result = EKeyboardEvent.SELECT_ALL;
       }
       break;
     case R:
-      if (MouseEventExtensions.isCommandButton(event)) {
+      if (MouseEventExtensions.isCommandButton(event.metaKey, event)) {
         result = EKeyboardEvent.RENAME;
       }
       break;
     case S:
-      if (MouseEventExtensions.isCommandButton(event) && !MouseEventExtensions.isShiftPressed(event)) {
+      if (MouseEventExtensions.isCommandButton(event.metaKey, event) && !MouseEventExtensions.isShiftPressed(event)) {
         result = EKeyboardEvent.SAVE;
       }
-      if (MouseEventExtensions.isShiftPressed(event) && MouseEventExtensions.isCommandButton(event)) {
+      if (MouseEventExtensions.isShiftPressed(event) && MouseEventExtensions.isCommandButton(event.metaKey, event)) {
         result = EKeyboardEvent.NEW;
       }
       break;

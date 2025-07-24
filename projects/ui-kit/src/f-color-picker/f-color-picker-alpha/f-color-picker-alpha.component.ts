@@ -10,8 +10,8 @@ import {
 import { FColorPickerHandleComponent } from '../f-color-picker-handle/f-color-picker-handle.component';
 import { DOCUMENT } from '@angular/common';
 import { BaseHandleContainer, ColorExtensions, HSBAToHexConverter, IHSBAColor } from '../domain';
-import { RectExtensions } from '@foblex/core';
 import { drawAlphaLine } from './draw-alpha-line';
+import {RectExtensions} from "@foblex/2d";
 
 @Component({
   selector: `f-color-picker-alpha`,

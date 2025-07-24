@@ -1,4 +1,3 @@
-import { IHandler } from '@foblex/core';
 import { Injectable } from '@angular/core';
 import { GetSchemeConnectionConfigurationRequest } from './get-scheme-connection-configuration.request';
 import { Observable, of } from 'rxjs';
@@ -14,6 +13,7 @@ import {
   getLineTypeOptions, getMarkerOptions,
   IConfiguration
 } from '../../../components/configuration';
+import {IHandler} from "@foblex/mediator";
 
 
 @Injectable()

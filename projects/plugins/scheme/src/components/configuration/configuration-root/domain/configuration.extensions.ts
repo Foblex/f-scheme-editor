@@ -1,10 +1,10 @@
 import { AbstractControl, FormControl } from '@angular/forms';
-import { IIdName } from '@foblex/core';
 import { IConfigurationRow } from '../../configuration-row/domain';
 import { IConfigurationSection } from '../../configuration-section/domain';
 import { EConfigurationComponentType } from './e-configuration-component-type';
 import { IConfigurationComponent } from '../../configuration-component';
 import { getBorderRadiusPanelConfiguration, getPaddingPanelConfiguration } from '../../configuration-mixed';
+import {IIdName} from "@core";
 
 export class ConfigurationExtensions {
 

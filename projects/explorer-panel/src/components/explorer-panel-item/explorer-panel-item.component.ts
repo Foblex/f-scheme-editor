@@ -16,7 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { EEntityType } from '@core';
 import { ICONS } from '@resources';
 import { EntityColorPipe, EntityIconPipe } from '@ui-kit';
-import { MouseEventExtensions } from '@foblex/core';
+import {MouseEventExtensions} from "@foblex/utils";
 
 @Component({
   selector: 'button[ep-item]',

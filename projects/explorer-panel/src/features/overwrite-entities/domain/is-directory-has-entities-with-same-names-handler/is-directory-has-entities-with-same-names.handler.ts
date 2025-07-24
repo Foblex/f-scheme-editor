@@ -1,11 +1,11 @@
 import { IsDirectoryHasEntitiesWithSameNamesRequest } from './is-directory-has-entities-with-same-names-request';
 import { Injectable } from '@angular/core';
-import { IHandler } from '@foblex/core';
 import { IsDirectoryHasEntitiesWithSameNamesResponse } from './is-directory-has-entities-with-same-names-response';
 import {
   IsDirectoryHasEntitiesWithSameNamesResponseItem
 } from './is-directory-has-entities-with-same-names-response-item';
 import { IEntity, LodashExtensions, StorageService } from '@core';
+import {IHandler} from "@foblex/mediator";
 
 @Injectable()
 export class IsDirectoryHasEntitiesWithSameNamesHandler

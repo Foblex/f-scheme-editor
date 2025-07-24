@@ -1,4 +1,3 @@
-import { IHandler } from '@foblex/core';
 import { ToSchemeViewModelRequest } from './to-scheme-view-model.request';
 import { ISchemeViewModel } from '../../i-scheme-view-model';
 import { ISchemeNodeViewModel } from '../../i-scheme-node-view-model';
@@ -7,6 +6,7 @@ import { ISchemeConnectionViewModel } from '../../i-scheme-connection-view-model
 import { IScheme } from '../../i-scheme';
 import { INodeConnectorViewModel } from '../../i-node-connector-view-model';
 import { IConnectionStyle, IRectStyle, ITextStyle } from '../../../components/configuration';
+import {IHandler} from "@foblex/mediator";
 
 export class ToSchemeViewModelMapper implements IHandler<ToSchemeViewModelRequest, ISchemeViewModel> {
 

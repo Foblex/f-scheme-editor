@@ -1,5 +1,5 @@
 import { DragHandleDirective } from '../../../directives';
-import { IPointerEvent } from '@foblex/core';
+import {IPointerEvent} from "@foblex/flow";
 
 export interface IToggleSelectionDragAndDropItemsRequest {
 

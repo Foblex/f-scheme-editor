@@ -1,4 +1,4 @@
-import { IIdName } from '@foblex/core';
+import {IIdName} from "@core";
 
 export interface IDropDownOption<T> extends IIdName<T> {
 

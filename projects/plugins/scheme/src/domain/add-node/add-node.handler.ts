@@ -3,10 +3,11 @@ import { Observable, of, switchMap } from 'rxjs';
 import { IScheme } from '../i-scheme';
 import { AddNodeRequest } from './add-node.request';
 import { EEntityType, IEntitySummary, StorageService } from '@core';
-import { GuidExtensions, IHandler } from '@foblex/core';
 import { ISchemeNode } from '../i-scheme-node';
 import { defaultRectStyle, defaultTextStyle } from '../../components/configuration';
 import { defaultFImage } from '@ui-kit';
+import {IHandler} from "@foblex/mediator";
+import {generateGuid} from "@foblex/utils";
 
 @Injectable()
 export class AddNodeHandler implements IHandler<AddNodeRequest, Observable<IEntitySummary>> {
@@ -31,11 +32,11 @@ export class AddNodeHandler implements IHandler<AddNodeRequest, Observable<IEnti
 
   private create(request: AddNodeRequest): ISchemeNode {
     return {
-      key: GuidExtensions.generate(),
+      key: generateGuid(),
       type: request.paletteKey,
       image: defaultFImage(),
       textStyle: defaultTextStyle(),
-      rectStyle: defaultRectStyle(request.position, { width: 100, height: 100 }),
+      rectStyle: defaultRectStyle(request.position, { width: 100, height: 100 }, '#007bff'),
     }
   }
 }

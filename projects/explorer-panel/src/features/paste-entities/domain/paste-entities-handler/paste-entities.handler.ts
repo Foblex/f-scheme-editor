@@ -1,7 +1,6 @@
 import { PasteEntitiesRequest } from './paste-entities.request';
 import { map, Observable, of, switchMap } from 'rxjs';
 import { Inject, Injectable } from '@angular/core';
-import { IHandler } from '@foblex/core';
 import { PasteEntitiesDialogComponent, PasteEntitiesDialogRequest } from '../../components';
 import { EOverwriteEntities, OverwriteEntitiesDialogResponse, OverwriteEntitiesHandler, OverwriteEntitiesRequest } from '../../../overwrite-entities';
 import { EP_CLIPBOARD_TOKEN } from '../../../../domain';
@@ -9,6 +8,7 @@ import { GetAllChildrenForEntityToPasteHandler, GetAllChildrenForEntityToPasteRe
 import { ExplorerPanelApiService } from '../../../../services';
 import { ClipboardService, IEntity, IEntityPlugin, LodashExtensions, PLUGIN_TOKEN, StorageService } from '@core';
 import { MatDialog } from '@angular/material/dialog';
+import {IHandler} from "@foblex/mediator";
 
 @Injectable()
 export class PasteEntitiesHandler

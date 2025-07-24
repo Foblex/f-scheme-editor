@@ -1,7 +1,6 @@
 import { OverwriteEntitiesRequest } from './overwrite-entities-request';
 import { Observable, Subscriber, take } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { IHandler } from '@foblex/core';
 import {
   EOverwriteEntities,
   OverwriteEntitiesDialogComponent,
@@ -15,6 +14,7 @@ import {
 } from '../is-directory-has-entities-with-same-names-handler';
 import { MatDialog } from '@angular/material/dialog';
 import { IEntity } from '@core';
+import {IHandler} from "@foblex/mediator";
 
 @Injectable()
 export class OverwriteEntitiesHandler

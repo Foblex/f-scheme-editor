@@ -1,5 +1,5 @@
 import { EKeyboardEvent } from './e-keyboard-event';
-import { EOperationSystem } from '@foblex/core';
+import {EOperationSystem} from "@foblex/platform";
 
 export const SHORTCUTS = {
   [ EKeyboardEvent.NEW ]: {

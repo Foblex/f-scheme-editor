@@ -49,7 +49,7 @@ export class SchemeEditorToolbarComponent {
         this.editor.fCanvasComponent.fitToScreen();
         break;
       case ESchemeToolbarAction.ONE_TO_ONE:
-        this.editor.fCanvasComponent.oneToOne();
+        this.editor.fCanvasComponent.resetScaleAndCenter();
         break;
     }
   }

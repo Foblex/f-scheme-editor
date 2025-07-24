@@ -12,7 +12,7 @@ import { fromEvent, map, Subscription } from 'rxjs';
 import { IS_TOUCH_DEVICE } from './domain/is-touch-device.const';
 import { IPointerEvent } from './domain/i-pointer-event';
 import { EResizableSize } from './domain/e-resizable-size';
-import { IPoint } from '@foblex/core';
+import {IPoint} from "@foblex/2d";
 
 @Directive({
   selector: '[resizable-box]',

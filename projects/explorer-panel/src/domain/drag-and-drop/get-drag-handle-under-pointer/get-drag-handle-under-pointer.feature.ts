@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { IGetDragHandleUnderPointerRequest } from './i-get-drag-handle-under-pointer-request';
 import { DragHandleDirective } from '../../../directives';
-import { IHandler } from '@foblex/core';
 import { SelectionService } from '../../../services';
+import {IHandler} from "@foblex/mediator";
 
 @Injectable()
 export class GetDragHandleUnderPointerFeature implements IHandler<IGetDragHandleUnderPointerRequest, DragHandleDirective | undefined> {

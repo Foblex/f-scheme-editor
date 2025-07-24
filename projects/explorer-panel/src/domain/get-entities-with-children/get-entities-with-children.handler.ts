@@ -1,7 +1,7 @@
 import { GetEntitiesWithChildrenRequest } from './get-entities-with-children.request';
-import { IHandler } from '@foblex/core';
 import { ITreeItem } from '../i-tree-item';
 import { LodashExtensions } from '@core';
+import {IHandler} from "@foblex/mediator";
 
 export class GetEntitiesWithChildrenHandler
     implements IHandler<GetEntitiesWithChildrenRequest, ITreeItem[]> {

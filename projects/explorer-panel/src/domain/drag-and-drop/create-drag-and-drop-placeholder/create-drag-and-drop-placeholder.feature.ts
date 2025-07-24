@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { DomElementExtensions, IHandler } from '@foblex/core';
 import { ICreateDragAndDropPlaceholderRequest } from './i-create-drag-and-drop-placeholder-request';
 import { SelectionService } from '../../../services';
-import { LodashExtensions } from '@core';
+import {createHtmlElement, LodashExtensions} from '@core';
 import { LOCALIZATION } from '@resources';
+import {IHandler} from "@foblex/mediator";
 
 const PLACEHOLDER_CLASS: string = 'explorer-panel-drag-placeholder';
 
@@ -43,15 +43,15 @@ export class CreateDragAndDropPlaceholderFeature
   }
 
   private static createPlaceholderContainer(): HTMLElement {
-    const result: HTMLElement = DomElementExtensions.createHtmlElement('div');
+    const result: HTMLElement = createHtmlElement('div');
     result.classList.add(PLACEHOLDER_CLASS);
     return result;
   }
 
   private createMoreItemsContainer(itemsMoreThenThreshold: number): HTMLElement {
-    const result: HTMLElement = DomElementExtensions.createHtmlElement('button');
+    const result: HTMLElement = createHtmlElement('button');
     result.classList.add('explorer-panel-item', SELECTED_ITEM_CLASS);
-    const span: HTMLSpanElement =  DomElementExtensions.createHtmlElement('span');
+    const span: HTMLSpanElement =  createHtmlElement('span');
     span.classList.add('item-text');
     span.innerHTML = LodashExtensions.textInterpolation(LOCALIZATION.explorer_panel.and_more_files, itemsMoreThenThreshold);
     result.appendChild(span);

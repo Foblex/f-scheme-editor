@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, Renderer2, ElementRef } from '@angular/core';
-import { IPoint, IRect, RectExtensions } from '@foblex/core';
+import {IPoint, IRect, RectExtensions} from "@foblex/2d";
 
 @Component({
   selector: `div[f-color-picker-handle]`,

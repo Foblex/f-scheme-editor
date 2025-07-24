@@ -1,7 +1,7 @@
 import { from, Observable } from 'rxjs';
 import { DB_STORE_NAME } from '../constants';
 import { GetObjectPromiseRequest } from './get-object-promise.request';
-import { IHandler } from '@foblex/core';
+import {IHandler} from "@foblex/mediator";
 
 export class GetObjectPromiseHandler<TData> implements IHandler<GetObjectPromiseRequest, Observable<TData | undefined>> {
 

@@ -3,7 +3,7 @@ import { Observable, of, switchMap } from 'rxjs';
 import { IDirectory } from '../i-directory';
 import { CreateDirectoryRequest } from './create-directory.request';
 import { CreateEntityHandlerBase, EEntityType, IEntitySummary, StorageService } from '@core';
-import { GuidExtensions } from '@foblex/core';
+import {generateGuid} from "@foblex/utils";
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +18,7 @@ export class CreateDirectoryHandler extends CreateEntityHandlerBase {
 
   public handle(payload: CreateDirectoryRequest): Observable<IEntitySummary> {
     const entity: IDirectory = {
-      key: GuidExtensions.generate(),
+      key: generateGuid(),
       parentKey: payload.inDirectory,
       name: payload.name,
       type: EEntityType.DIRECTORY,

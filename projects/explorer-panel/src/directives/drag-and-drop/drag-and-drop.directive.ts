@@ -19,9 +19,9 @@ import {
   ToggleSelectionDragAndDropItemsFeature
 } from '../../domain';
 import { NgScrollbar } from 'ngx-scrollbar';
-import { IDragAndDropBase } from './i-drag-and-drop-base';
-import { IHasHostElement, IPointerEvent, Point } from '@foblex/core';
 import { EEntityType, ROOT_DIRECTORY_KEY } from '@core';
+import {DragAndDropBase, IHasHostElement, IPointerEvent} from "@foblex/flow";
+import {Point} from "@foblex/2d";
 
 const DROP_HOVERED_CLASS: string = 'explorer-panel-tree-item-drop-hovered';
 
@@ -35,9 +35,10 @@ const DROP_HOVERED_CLASS: string = 'explorer-panel-tree-item-drop-hovered';
   ]
 })
 export class DragAndDropDirective
-  extends IDragAndDropBase implements IHasHostElement,
+  extends DragAndDropBase implements IHasHostElement,
                                       AfterViewInit,
                                       OnDestroy {
+
 
   private dropSubscriptions$: Subscription = Subscription.EMPTY;
 
@@ -70,7 +71,7 @@ export class DragAndDropDirective
   private isPlaceholderAttached: boolean = false;
 
   constructor(
-    @Inject(DOCUMENT) private document: any,
+    @Inject(DOCUMENT) private _document: any,
     private ngScrollBar: NgScrollbar,
     private elementReference: ElementRef<HTMLElement>,
     private injector: Injector,
@@ -81,7 +82,7 @@ export class DragAndDropDirective
   }
 
   public ngAfterViewInit(): void {
-    super.subscribe(this.document);
+    super.subscribe(this._document);
   }
 
   public onPointerDown(event: IPointerEvent): boolean {
@@ -113,6 +114,10 @@ export class DragAndDropDirective
   protected prepareDragSequence(event: IPointerEvent): void {
   }
 
+  protected override onSelect(event: Event): void {
+
+  }
+
   public onPointerMove(event: IPointerEvent): boolean {
     if (!this.isPlaceholderAttached && !this.isSkipPointerMove(event)) {
 
@@ -123,7 +128,7 @@ export class DragAndDropDirective
         const feature = this.injector.get(CreateDragAndDropPlaceholderFeature);
         if (feature) {
           this.dragPlaceholder = feature.handle({ items: this.items!.toArray() });
-          this.document.body.appendChild(this.dragPlaceholder);
+          this._document.body.appendChild(this.dragPlaceholder);
 
           this.dropSubscriptions$.unsubscribe();
           this.dropSubscriptions$ = this.subscribeOnHoverItemWithChildren();

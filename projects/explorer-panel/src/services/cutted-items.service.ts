@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IMap } from '@foblex/core';
+import {IMap} from "@foblex/flow";
 
 @Injectable()
 export class CuttedItemsService {

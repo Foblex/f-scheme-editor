@@ -3,8 +3,8 @@ import { Observable, of, switchMap } from 'rxjs';
 import { IScheme } from '../i-scheme';
 import { CreateSchemeRequest } from './create-scheme.request';
 import { CreateEntityHandlerBase, EEntityType, IEntitySummary, StorageService } from '@core';
-import { GuidExtensions } from '@foblex/core';
 import { ESchemeBackground } from '../e-scheme-background';
+import {generateGuid} from "@foblex/utils";
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +19,7 @@ export class CreateSchemeHandler extends CreateEntityHandlerBase {
 
   public handle(payload: CreateSchemeRequest): Observable<IEntitySummary> {
     const entity: IScheme = {
-      key: GuidExtensions.generate(),
+      key: generateGuid(),
       parentKey: payload.inDirectory,
       name: payload.name,
       type: EEntityType.SCHEME_DRAWER,

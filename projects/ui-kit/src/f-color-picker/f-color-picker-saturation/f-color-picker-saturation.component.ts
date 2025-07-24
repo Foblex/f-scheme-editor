@@ -9,7 +9,6 @@ import {
 } from '@angular/core';
 import { FColorPickerHandleComponent } from '../f-color-picker-handle/f-color-picker-handle.component';
 import { DOCUMENT } from '@angular/common';
-import { IPoint, RectExtensions } from '@foblex/core';
 import {
   BaseHandleContainer,
   ColorExtensions,
@@ -17,6 +16,7 @@ import {
   IHSBAColor,
   validateHSBA
 } from '../domain';
+import {IPoint, RectExtensions} from "@foblex/2d";
 
 @Component({
   selector: `f-color-picker-saturation`,

@@ -1,4 +1,3 @@
-import { IHandler } from '@foblex/core';
 import { Injectable } from '@angular/core';
 import { GetSchemeConfigurationRequest } from './get-scheme-configuration.request';
 import { debounceTime, distinctUntilChanged, Observable, of, Subscription, switchMap } from 'rxjs';
@@ -8,6 +7,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { getColorSection, IConfiguration } from '../../../components/configuration';
 import { getSchemeBackgroundSection } from './get-scheme-background-section';
 import { FEditorContainerEvents } from '@ui-kit';
+import {IHandler} from "@foblex/mediator";
 
 @Injectable()
 export class GetSchemeConfigurationHandler

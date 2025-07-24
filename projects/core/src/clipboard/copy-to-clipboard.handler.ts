@@ -1,6 +1,6 @@
-import { IHandler } from '@foblex/core';
 import { from, map, Observable, of, switchMap } from 'rxjs';
 import { IClipboardData } from './i-clipboard-data';
+import {IHandler} from "@foblex/mediator";
 
 export class CopyToClipboardHandler implements IHandler<IClipboardData<any, any>, Observable<any | undefined>> {
 

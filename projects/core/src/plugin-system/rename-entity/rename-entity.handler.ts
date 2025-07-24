@@ -1,9 +1,9 @@
 import { RenameEntityRequest } from './rename-entity.request';
 import { Observable, of, switchMap } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { IHandler } from '@foblex/core';
 import { StorageService } from '../../storage';
 import { IEntitySummary } from '../../core-domain';
+import {IHandler} from "@foblex/mediator";
 
 @Injectable({
   providedIn: 'root',

@@ -1,5 +1,5 @@
 import { GetEntitiesBetweenInTreeRequest } from './get-entities-between-in-tree.request';
-import { IHandler } from '@foblex/core';
+import {IHandler} from "@foblex/mediator";
 
 export class GetEntitiesBetweenInTreeHandler
     implements IHandler<GetEntitiesBetweenInTreeRequest, string[]> {

@@ -1,5 +1,5 @@
-import { IHandler } from '@foblex/core';
 import { from, map, Observable, of, switchMap } from 'rxjs';
+import {IHandler} from "@foblex/mediator";
 
 export class PasteFromClipboardHandler implements IHandler<string, Observable<any | undefined>> {
 

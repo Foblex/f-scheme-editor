@@ -6,8 +6,8 @@ import {
 import { Subscription } from 'rxjs';
 import { ColorExtensions, HSBAToHexConverter, IHSBAColor, RGBAToHSBAConverter } from '../domain';
 import { FColorPickerHandleComponent } from '../f-color-picker-handle/f-color-picker-handle.component';
-import { IRect, RectExtensions } from '@foblex/core';
 import { FAlphaColorSmallRectComponent } from '../../f-common';
+import {IRect, RectExtensions} from "@foblex/2d";
 
 @Component({
   selector: 'f-color-picker-rect',

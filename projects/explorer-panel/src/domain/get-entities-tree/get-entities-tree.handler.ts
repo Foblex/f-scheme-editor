@@ -1,8 +1,8 @@
-import { IHandler } from '@foblex/core';
 import { ITreeItem } from '../i-tree-item';
 import { getRootDirectory } from '../get-root-directory';
 import { IExplorerPanelState } from '../i-explorer-panel-state';
 import { EEntityType, IEntity, IEntityPlugin, StorageService } from '@core';
+import {IHandler} from "@foblex/mediator";
 
 export class GetEntitiesTreeHandler
   implements IHandler<void, IExplorerPanelState> {

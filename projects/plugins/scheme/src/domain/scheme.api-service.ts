@@ -3,7 +3,6 @@ import { Observable } from 'rxjs';
 import { GetSchemeViewModelHandler, GetSchemeViewModelRequest } from './get-view-model';
 import { ISchemeViewModel } from './i-scheme-view-model';
 import { AddNodeHandler, AddNodeRequest } from './add-node';
-import { IPoint, IRect } from '@foblex/core';
 import { IEntitySummary } from '@core';
 import { AddConnectionHandler, AddConnectionRequest } from './add-connection';
 import { TransformNodeHandler } from './transform-node';
@@ -15,6 +14,7 @@ import {
   GetConfigurationRequest
 } from './get-configuration';
 import { IConfiguration } from '../components/configuration/configuration-root';
+import {IPoint, IRect} from "@foblex/2d";
 
 @Injectable()
 export class SchemeApiService {
@@ -62,7 +62,7 @@ export class SchemeApiService {
 
   public getConfiguration(key: string, selection: FSelectionChangeEvent): Observable<IConfiguration> {
     return this.getConfigurationHandler.handle(
-      new GetConfigurationRequest(key, selection.nodes, selection.connections)
+      new GetConfigurationRequest(key, selection.fNodeIds, selection.fConnectionIds)
     );
   }
 }

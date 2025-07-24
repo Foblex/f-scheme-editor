@@ -1,6 +1,6 @@
 import { GetNamesByTypeInDirectoryRequest } from './get-names-by-type-in-directory.request';
-import { IHandler } from '@foblex/core';
 import { StorageService } from '@core';
+import {IHandler} from "@foblex/mediator";
 
 export class GetNamesByTypeInDirectoryHandler
     implements IHandler<GetNamesByTypeInDirectoryRequest, string[]> {

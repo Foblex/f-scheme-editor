@@ -1,4 +1,3 @@
-import { IHandler } from '@foblex/core';
 import { Injectable } from '@angular/core';
 import { GetSchemeNodeConfigurationRequest } from './get-scheme-node-configuration.request';
 import { Observable, of } from 'rxjs';
@@ -15,6 +14,7 @@ import {
   getImageSection,
   IConfiguration
 } from '../../../components/configuration';
+import {IHandler} from "@foblex/mediator";
 
 @Injectable()
 export class GetSchemeNodeConfigurationHandler

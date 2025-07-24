@@ -9,7 +9,7 @@ import {
   IFImage
 } from '../../f-common';
 import { MatSlider, MatSliderThumb } from '@angular/material/slider';
-import { FSliderIndicatorComponent } from '../../f-slider/f-slider-indicator.component';
+import { FSliderIndicatorComponent } from '../../f-slider';
 import { FImagePickerPreviewComponent } from '../f-image-picker-preview/f-image-picker-preview.component';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { FIconButtonComponent } from '../../f-icon-button';
@@ -17,8 +17,8 @@ import { MatIcon } from '@angular/material/icon';
 import { MatFormField } from '@angular/material/form-field';
 import { MatOption } from '@angular/material/core';
 import { MatSelect } from '@angular/material/select';
-import { IIdName } from '@foblex/core';
 import { startWith } from 'rxjs/operators';
+import {IIdName} from "@core";
 
 @Component({
   selector: 'f-image-picker-configuration',

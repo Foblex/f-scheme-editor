@@ -1,5 +1,5 @@
-import { IIdName, IMap } from '@foblex/core';
-import { IEntity } from '../core-domain';
+import {IEntity, IIdName} from '../core-domain';
+import {IMap} from "@foblex/flow";
 
 export interface IState extends IIdName<string> {
 

@@ -1,7 +1,6 @@
 import { MoveEntitiesRequest } from './move-entities-request';
 import { map, Observable, of, switchMap, tap } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { IHandler } from '@foblex/core';
 import { MoveEntitiesDialogComponent, MoveEntitiesDialogRequest } from '../../components';
 import {
   EOverwriteEntities,
@@ -12,6 +11,7 @@ import {
 import { ExplorerPanelApiService } from '../../../../services';
 import { MatDialog } from '@angular/material/dialog';
 import { StorageService } from '@core';
+import {IHandler} from "@foblex/mediator";
 
 @Injectable()
 export class MoveEntitiesHandler

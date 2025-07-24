@@ -1,8 +1,8 @@
 import { DeleteEntitiesRequest } from './delete-entities.request';
 import { Observable, of, switchMap } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { IHandler } from '@foblex/core';
 import { StorageService } from '../../storage';
+import {IHandler} from "@foblex/mediator";
 
 @Injectable({
   providedIn: 'root',

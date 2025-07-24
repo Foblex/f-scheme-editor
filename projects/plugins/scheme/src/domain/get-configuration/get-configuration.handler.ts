@@ -1,4 +1,3 @@
-import { IHandler } from '@foblex/core';
 import { Injectable } from '@angular/core';
 import { GetConfigurationRequest } from './get-configuration.request';
 import { Observable } from 'rxjs';
@@ -11,6 +10,7 @@ import {
   GetSchemeConnectionConfigurationRequest
 } from './get-connection-configuration';
 import { IConfiguration } from '../../components/configuration';
+import {IHandler} from "@foblex/mediator";
 
 @Injectable()
 export class GetConfigurationHandler

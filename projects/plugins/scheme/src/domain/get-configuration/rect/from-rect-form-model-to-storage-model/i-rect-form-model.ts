@@ -1,6 +1,6 @@
-import { IPoint, ISize } from '@foblex/core';
 import { IBorderFormModel } from './i-border-form-model';
 import { IMixedValue } from '../../../../components/configuration';
+import {IPoint, ISize} from "@foblex/2d";
 
 export interface IRectFormModel extends IPoint, ISize {
 

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { MouseEventExtensions } from '@foblex/core';
 import { ExplorerPanelApiService } from './explorer-panel.api-service';
 import { Subject } from 'rxjs';
 import { ITreeItem } from '../domain';
 import { EEntityType, ROOT_DIRECTORY_KEY } from '@core';
+import {MouseEventExtensions} from "@foblex/utils";
 
 @Injectable()
 export class SelectionService {

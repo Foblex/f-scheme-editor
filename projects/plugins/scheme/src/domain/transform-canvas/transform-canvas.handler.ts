@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { TransformCanvasRequest } from './transform-canvas.request';
 import { Observable } from 'rxjs';
-import { IHandler } from '@foblex/core';
 import { SessionStateService } from '@core';
 import { ISchemeEditorVisualState } from '../i-scheme-editor-visual-state';
+import {IHandler} from "@foblex/mediator";
 
 @Injectable()
 export class TransformCanvasHandler

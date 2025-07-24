@@ -8,10 +8,10 @@ import {
   Renderer2,
   ViewChild,
 } from '@angular/core';
-import { IHasHostElement } from '@foblex/core';
 import { ILocalConfiguration, LocalConfigurationService } from '@core';
 import { IPointerEvent } from '../../resizable-box/domain/i-pointer-event';
 import { EResizableSize, ResizableBoxDirective, ResizableBoxHandleDirective } from '../../resizable-box';
+import {IHasHostElement} from "@foblex/flow";
 
 @Component({
   selector: 'f-editor-drawer',

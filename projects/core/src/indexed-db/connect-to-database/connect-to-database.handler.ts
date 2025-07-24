@@ -1,6 +1,6 @@
-import { IHandler } from '@foblex/core';
 import { DB_NAME, DB_STORE_NAME, DB_VERSION } from '../constants';
 import { ConnectToDatabaseRequest } from './connect-to-database.request';
+import {IHandler} from "@foblex/mediator";
 
 export class ConnectToDatabaseHandler implements IHandler<ConnectToDatabaseRequest, Promise<IDBDatabase>> {
 
