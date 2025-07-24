@@ -5,7 +5,7 @@ This project demonstrates how to build an interactive **node-based diagram edito
 It includes features such as zooming, drag & drop, node creation, customizable connections, and full control over layout and behavior.
 
 Additionally, this example integrates:
-- ✅ Persistent **localStorage** state saving
+- ✅ Persistent **IndexedDB** state saving
 - 🎨 Custom **color picker** (inspired by Figma)
 - 🖼️ Custom **image picker** for background or node assets
 - 🧱 UI components built using **Angular Material**
