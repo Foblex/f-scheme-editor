@@ -1,11 +1,11 @@
-import { ChangeDetectorRef, Directive, ElementRef, inject, Input, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Directive, ElementRef, inject, Input, signal, ViewChild } from '@angular/core';
 import { CdkConnectedOverlay, CdkOverlayOrigin, ConnectedPosition } from '@angular/cdk/overlay';
 import { F_OVERLAY_POSITIONS } from './f-overlay-positions';
 
 @Directive()
 export class FOverlayPanelBase {
 
-  public isPanelVisible: boolean = false;
+  public isPanelVisible = signal(false);
 
   @Input()
   public disabled: boolean = false;
@@ -16,16 +16,16 @@ export class FOverlayPanelBase {
   public overlay!: CdkConnectedOverlay;
 
   public preferredOverlayOrigin: CdkOverlayOrigin | ElementRef | undefined;
+    protected changeDetectorRef: ChangeDetectorRef = inject(ChangeDetectorRef);
 
-  protected changeDetectorRef: ChangeDetectorRef = inject(ChangeDetectorRef);
 
   public onOpen(): void {
     if (this.disabled) {
       return;
     }
     this.preferredOverlayOrigin = this.getConnectedOverlayOrigin?.();
-    this.isPanelVisible = !this.isPanelVisible;
-    this.changeDetectorRef.detectChanges();
+    this.isPanelVisible.set(!this.isPanelVisible());
+
   }
 
   public getConnectedOverlayOrigin?(): ElementRef;
@@ -48,8 +48,7 @@ export class FOverlayPanelBase {
 
   public backdropClick(): void {
     this.onBackdropClick?.();
-    this.isPanelVisible = false;
-    this.changeDetectorRef.detectChanges();
+    this.isPanelVisible.set(false);
   }
 
   public onBackdropClick?(): void;

@@ -17,7 +17,7 @@ export class FColorOverlayDirective {
   }
 
   @HostListener('blur')
-  private onBlur(): void {
+   onBlur(): void {
     this.fColorOverlay.updateValue(this.control.value);
   }
 }

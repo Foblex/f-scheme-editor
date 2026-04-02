@@ -59,7 +59,7 @@ export class SchemeRootComponent implements AfterViewInit, OnDestroy {
   private subscribeOnRouterChanged(): Subscription {
     return this.routerStorage.onRouterChanged$.pipe(startWith(null)).subscribe(() => {
       this.key = this.routerStorage.getEntityKey();
-      this.getConfigurationSummary({ fNodeIds: [], fGroupIds: [], fConnectionIds: [] });
+      this.getConfigurationSummary(new FSelectionChangeEvent([], [], []));
       this.changeDetector.markForCheck();
     });
   }

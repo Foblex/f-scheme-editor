@@ -35,10 +35,13 @@
                         [fType]="connection.type"
                         [fOutputId]="connection.key"
                         [fInputId]="connection.key"
-                        [fStartColor]="connection.style.color.color1"
                         [fRadius]="connection.radius"
                         [fOffset]="connection.offset"
-                        [fEndColor]="connection.style.color.color2 || connection.style.color.color1">
+                        >
+            <f-connection-gradient
+              [fStartColor]="connection.style.color.color1"
+              [fEndColor]="connection.style.color.color2 || connection.style.color.color1"/>
+
             @switch (connection.markerStart) {
               @case (eConnectionMarker.ARROW) {
                 <ng-container

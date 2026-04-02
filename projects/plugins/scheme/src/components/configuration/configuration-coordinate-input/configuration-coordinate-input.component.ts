@@ -18,7 +18,6 @@ import { LodashExtensions } from '@core';
     MatFormField,
     ReactiveFormsModule,
     MatInput,
-    MatIcon,
     MatPrefix
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,

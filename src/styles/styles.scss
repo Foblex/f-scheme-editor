@@ -1,24 +1,22 @@
-@import "fonts";
+@use "fonts";
 
-@import "components/button";
-@import "components/checkbox";
-@import "components/context-menu";
-@import "components/dialog";
-@import "components/explorer-panel";
-@import "components/f-overlay-panel";
-@import "components/flow";
-@import "components/form";
-@import "components/input-container";
-@import "components/scrollbar";
-@import "components/slider";
+@use "components/button";
+@use "components/checkbox";
+@use "components/context-menu";
+@use "components/dialog";
+@use "components/explorer-panel";
+@use "components/f-overlay-panel";
+@use "components/flow";
+@use "components/form";
+@use "components/input-container";
+@use "components/scrollbar";
+@use "components/slider";
 
-@media (prefers-color-scheme: light) {
-  @import "themes/light/colors";
-}
+@use "themes/colors" as colors;
+    :root {
+    @include colors.lightdark();
+  }
 
-@media (prefers-color-scheme: dark) {
-  @import "themes/light/colors";
-}
 
 html, body {
   margin: 0;
@@ -28,7 +26,7 @@ html, body {
 }
 
 body {
-  @include font-default();
+  @include fonts.font-default();
 }
 
 * {

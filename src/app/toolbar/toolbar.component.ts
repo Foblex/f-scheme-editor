@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { NgOptimizedImage } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
@@ -9,7 +8,6 @@ import { MatIconModule } from '@angular/material/icon';
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    NgOptimizedImage,
     MatIconModule
   ]
 })

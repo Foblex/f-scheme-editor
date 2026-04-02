@@ -40,7 +40,6 @@ import { MatIcon } from '@angular/material/icon';
     DialogFooterDirective,
     FormContainerDirective,
     FormRowDirective,
-    MatIcon,
     DialogContainerComponent
   ],
   providers: [ CreateEntityDialogForm ]

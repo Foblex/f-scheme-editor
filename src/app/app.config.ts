@@ -1,6 +1,5 @@
-import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig,  provideZonelessChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { DefaultErrorStateMatcher, PLUGIN_TOKEN } from '@core';
 import { DirectoryPlugin } from '@directory';
 import { ErrorStateMatcher } from '@angular/material/core';
@@ -12,9 +11,8 @@ import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideZonelessChangeDetection(),
     provideRouter(EDITOR_ROUTES),
-    provideAnimationsAsync(),
     provideHttpClient(),
     { provide: PLUGIN_TOKEN, useClass: DirectoryPlugin, multi: true },
     // { provide: PLUGIN_TOKEN, useClass: PalettePlugin, multi: true },

@@ -1,59 +1,62 @@
-:root {
+@mixin lightdark() {
 
-  --gray1: #000000;
-  --gray2: #27282e;
-  --gray3: #383a42;
-  --gray4: #494b57;
-  --gray5: #5a5d6b;
-  --gray6: #6c707e;
-  --gray7: #818594;
-  --gray8: #a8adbd;
-  --gray9: #c9ccd6;
-  --gray10: #d3d5db;
-  --gray11: #dfe1e5;
-  --gray12: #ebecf0;
-  --gray13: #f7f8fa;
-  --gray14: #ffffff;
 
-  --blue1: #2e55a3;
-  --blue2: #315fbd;
-  --blue3: #3369d6;
+  --gray1:  light-dark(#000000, #ffffff);
+  --gray2:  light-dark(#27282e, #d0d0d0);
+  --gray3:  light-dark(#383a42, #bebebe);
+  --gray4:  light-dark(#494b57, #aaaaaa);
+  --gray5:  light-dark(#5a5d6b, #999999);
+  --gray6:  light-dark(#6c707e, #888888);
+  --gray7:  light-dark(#818594, #777777);
+  --gray8:  light-dark(#a8adbd, #666666);
+  --gray9:  light-dark(#c9ccd6, #555555);
+  --gray10: light-dark(#d3d5db, #444444);
+  --gray11: light-dark(#dfe1e5, #333333);
+  --gray12: light-dark(#ebecf0, #2a2a2a);
+  --gray13: light-dark(#f7f8fa, #1e1e1e);
+  --gray14: light-dark(#ffffff, #121212);
 
-  --blue4: #18A0FB;
+  /* BLUE */
+  --blue1:  light-dark(#2e55a3, #8ab4ff);
+  --blue2:  light-dark(#315fbd, #7aa2ff);
+  --blue3:  light-dark(#3369d6, #6b90ff);
+  --blue4:  light-dark(#18A0FB, #579aff);
+  --blue5:  light-dark(#4682fa, #4f86ff);
+  --blue6:  light-dark(#588cf3, #447aff);
+  --blue7:  light-dark(#709cf5, #3a6fff);
+  --blue8:  light-dark(#88adf7, #335fff);
+  --blue9:  light-dark(#a0bdf8, #2a52ff);
+  --blue10: light-dark(#c2d6fc, #223fff);
+  --blue11: light-dark(#d4e2ff, #1b2fcc);
+  --blue12: light-dark(#edf3ff, #162399);
+  --blue13: light-dark(#f5f8fe, #111966);
 
-  --blue5: #4682fa;
-  --blue6: #588cf3;
-  --blue7: #709cf5;
-  --blue8: #88adf7;
-  --blue9: #a0bdf8;
-  --blue10: #c2d6fc;
-  --blue11: #d4e2ff;
-  --blue12: #edf3ff;
-  --blue13: #f5f8fe;
-
-  --red1: #ad2b38;
-  --red2: #bc303e;
-  --red3: #cc3645;
-  --red4: #db3b4b;
-  --red5: #e55765;
-  --red6: #e46a76;
-  --red7: #ed99a1;
-  --red8: #f2b6bb;
-  --red9: #fad4d8;
-  --red10: #fff2f3;
-  --red11: #fff7f7;
+  /* RED */
+  --red1:  light-dark(#ad2b38, #ff9da3);
+  --red2:  light-dark(#bc303e, #ff8a8f);
+  --red3:  light-dark(#cc3645, #ff7a82);
+  --red4:  light-dark(#db3b4b, #ff6a72);
+  --red5:  light-dark(#e55765, #ff5c63);
+  --red6:  light-dark(#e46a76, #ff4f55);
+  --red7:  light-dark(#ed99a1, #ff454a);
+  --red8:  light-dark(#f2b6bb, #ff3a3f);
+  --red9:  light-dark(#fad4d8, #ff3237);
+  --red10: light-dark(#fff2f3, #ff292f);
+  --red11: light-dark(#fff7f7, #ff2128);
 
   --master-background: var(--gray13);
 
-  --text-main: #cccccc;
-  --text-placeholder: #9e9e9e;
-  --text-active: #ffffff;
 
-  --text-primary: #ffffff;
-  --text-secondary: #bbbbbb;
+  /* TEXT */
+  --text-main:        light-dark(#000000, #ffffff);
+  --text-placeholder: light-dark(#9e9e9e, #7a7a7a);
+  --text-active:      light-dark(#ffffff, #000000);
 
-  --blue: #0068b3;
-  --red: #f14c4c;
+  --text-primary:     light-dark(#000000, #ffffff);
+  --text-secondary:   light-dark(#444444, #bbbbbb);
+
+  --blue: light-dark(#0068b3, #4ba3ff);
+  --red:  light-dark(#f14c4c, #ff7373);
 
   --panels-divider: 1px solid var(--gray12);
 
@@ -119,10 +122,11 @@
   --dialog-close-button-hovered-background: var(--gray12);
 
   --context-menu-background: var(--gray14);
-  --context-menu-border: 0.5px solid rgb(0, 0, 0, 0.1);
+  --context-menu-border: light-dark(0.5px solid rgba(0, 0, 0, 0.1), 0.5px solid rgba(255, 255, 255, 0.2));
   --context-menu-border-radius: 2px;
   --context-menu-divider: var(--gray12);
-  --context-menu-shadow: 0px 6px 20px rgba(145, 145, 145, 0.47);
+  --context-menu-shadow: light-dark(0px 6px 20px rgba(145, 145, 145, 0.47), 0px 6px 20px rgba(0, 0, 0, 0.8));
+
   --context-menu-item-text: var(--gray1);
   --context-menu-item-shortcut-text: var(--gray7);
   --context-menu-delete-item-text: var(--red4);
@@ -131,17 +135,17 @@
 
   --input-border-textarea: var(--gray11);
   --input-border-focused: var(--blue4);
-  --input-border-disabled: #DFE1E5;
+   --input-border-disabled: light-dark(#DFE1E5, #444444);
   --input-border-focused-has-errors: var(--red4);
   --input-border-not-focused-has-errors: var(--red2);
-  --input-background-disabled: #f7f8fa9e;
+    --input-background-disabled: light-dark(#f7f8fa9e, #2a2a2a);
   --input-placeholder: var(--gray8);
   --input-icon: var(--gray1);
   --input-text: var(--gray1);
-  --input-text-disabled: #A8ADBD;
+  --input-text-disabled: light-dark(#A8ADBD, #666666);
   --input-button-hovered-background: var(--gray12);
 
-  --input-dialog-border-normal: rgba(0, 0, 0, 0.1);
+    --input-dialog-border-normal: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.2));
   --input-editor-details-border-normal: var(--gray10);
 
   --input-option-text: var(--gray1);

@@ -18,9 +18,7 @@ import { IConfigurationComponent } from '../configuration-component';
   },
   imports: [
     MatFormFieldModule,
-    FColorPickerOverlayComponent,
     MatInputModule,
-    FColorOverlayDirective,
     ReactiveFormsModule,
     FImagePickerOverlayComponent,
     FImagePickerInputDirective,

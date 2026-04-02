@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { SessionStateService } from '@core';
-import {IMap} from "@foblex/flow";
 
 const SESSION_STATE_KEY: string = 'FS_EP_TI';
 
 @Injectable()
 export class ToggleItemsService {
 
-  public expanded: IMap<boolean> = {};
+  public expanded: Record<string, boolean> = {};
 
   constructor(
       private sessionState: SessionStateService

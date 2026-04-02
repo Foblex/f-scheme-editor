@@ -2,7 +2,6 @@ import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, ViewChil
 import { CdkConnectedOverlay, CdkOverlayOrigin } from '@angular/cdk/overlay';
 import { MatFormField } from '@angular/material/form-field';
 import { AbstractControlDirective, NgControl } from '@angular/forms';
-import { matSelectAnimations } from '@angular/material/select';
 import { FColorPickerComponent } from './f-color-picker/f-color-picker.component';
 import { FColorPickerRectComponent } from './f-color-picker-rect/f-color-picker-rect.component';
 import { FOverlayPanelBase } from '../f-overlay-panel';
@@ -12,7 +11,6 @@ import { FOverlayPanelBase } from '../f-overlay-panel';
   templateUrl: './f-color-picker-overlay.component.html',
   styleUrls: [ './f-color-picker-overlay.component.scss' ],
   standalone: true,
-  animations: [ matSelectAnimations.transformPanel ],
   imports: [ CdkConnectedOverlay, CdkOverlayOrigin, FColorPickerComponent, FColorPickerRectComponent ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

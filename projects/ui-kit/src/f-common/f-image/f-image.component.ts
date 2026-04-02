@@ -16,7 +16,6 @@ import { NgStyle } from '@angular/common';
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    FButtonComponent,
     NgStyle
   ]
 })

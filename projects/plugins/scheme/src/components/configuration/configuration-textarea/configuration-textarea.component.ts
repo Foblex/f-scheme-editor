@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { FColorPickerOverlayComponent, FColorOverlayDirective } from '@ui-kit';
 import { MatInputModule } from '@angular/material/input';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { IConfigurationComponent } from '../configuration-component';
@@ -15,9 +14,7 @@ import { IConfigurationComponent } from '../configuration-component';
   },
   imports: [
     MatFormFieldModule,
-    FColorPickerOverlayComponent,
     MatInputModule,
-    FColorOverlayDirective,
     ReactiveFormsModule
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,

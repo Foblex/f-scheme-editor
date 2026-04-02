@@ -59,12 +59,12 @@ export class MoveEntitiesHandler
         entity.parentKey = item.toDirectory;
         this.storage.setEntity(entity!);
       } else if (item.overwriteResult === EOverwriteEntities.OVERWRITE) {
-        const entityToDelete = Object.values(this.storage.project.entities[ item.entity.type ]).find((x) => {
+        const entityToDelete = Object.values(this.storage.project.entities[ item.entity.type ]).find((x: any) => {
           const isNamesEqual = x.name.toLowerCase() === item.entity.name.toLowerCase();
           return isNamesEqual && x.parentKey === item.toDirectory;
         });
-        if (entityToDelete) {
-          const itemsToDelete = this.apiService.getItemsWithChildren([ entityToDelete.key ]);
+        if (entityToDelete ) {
+          const itemsToDelete = this.apiService.getItemsWithChildren([ (entityToDelete as any).key ]);
           itemsToDelete.forEach((itemToDelete) => {
             this.storage.removeEntity(itemToDelete.key, itemToDelete.type);
           });

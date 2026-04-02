@@ -5,7 +5,6 @@ import {
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ColorExtensions, HSBAToHexConverter, IHSBAColor, RGBAToHSBAConverter } from '../domain';
-import { FColorPickerHandleComponent } from '../f-color-picker-handle/f-color-picker-handle.component';
 import { FAlphaColorSmallRectComponent } from '../../f-common';
 import {IRect, RectExtensions} from "@foblex/2d";
 
@@ -16,7 +15,6 @@ import {IRect, RectExtensions} from "@foblex/2d";
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    FColorPickerHandleComponent,
     FAlphaColorSmallRectComponent
   ]
 })

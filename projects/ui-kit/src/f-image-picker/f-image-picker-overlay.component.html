@@ -6,7 +6,7 @@
              [cdkConnectedOverlayHasBackdrop]="true"
              cdkConnectedOverlayBackdropClass="f-overlay-panel-backdrop"
              [cdkConnectedOverlayOrigin]="preferredOverlayOrigin || origin"
-             [cdkConnectedOverlayOpen]="isPanelVisible"
+             [cdkConnectedOverlayOpen]="isPanelVisible()"
              [cdkConnectedOverlayPositions]="positions"
              (attach)="attach()"
              (backdropClick)="backdropClick()">

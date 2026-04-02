@@ -1,5 +1,4 @@
 import {IEntity, IIdName} from '../core-domain';
-import {IMap} from "@foblex/flow";
 
 export interface IState extends IIdName<string> {
 
@@ -7,7 +6,7 @@ export interface IState extends IIdName<string> {
 
   updatedAt: number;
 
-  tree: IMap<string>;
+  tree: Record<string, string>;
 
-  entities: IMap<IMap<IEntity>>;
+  entities: Record<string,Record<string,IEntity>>;
 }

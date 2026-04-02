@@ -71,18 +71,17 @@ export class DragAndDropDirective
   private isPlaceholderAttached: boolean = false;
 
   constructor(
-    @Inject(DOCUMENT) private _document: any,
+    @Inject(DOCUMENT) private localDocument: Document,
     private ngScrollBar: NgScrollbar,
     private elementReference: ElementRef<HTMLElement>,
     private injector: Injector,
-    ngZone: NgZone,
     private getFolderUnderPointer: GetDragHandleUnderPointerFeature
   ) {
-    super(ngZone);
+    super();
   }
 
   public ngAfterViewInit(): void {
-    super.subscribe(this._document);
+    super.subscribe();
   }
 
   public onPointerDown(event: IPointerEvent): boolean {
@@ -101,9 +100,10 @@ export class DragAndDropDirective
   }
 
   private isCanDragStart(event: IPointerEvent): boolean {
-    return event.isMouseLeftButton() && !this.draggedItem && !this.disabled &&
-        !this.ngScrollBar.state.horizontalHovered &&
-        !this.ngScrollBar.state.verticalHovered;
+    return event.isMouseLeftButton() && !this.draggedItem && !this.disabled
+    // &&
+    //     this.ngScrollBar.isVerticallyScrollable &&
+    //     this.ngScrollBar.isVerticallyScrollable ;
   }
 
   private isSkipPointerMove(event: IPointerEvent): boolean {
@@ -128,7 +128,7 @@ export class DragAndDropDirective
         const feature = this.injector.get(CreateDragAndDropPlaceholderFeature);
         if (feature) {
           this.dragPlaceholder = feature.handle({ items: this.items!.toArray() });
-          this._document.body.appendChild(this.dragPlaceholder);
+          this.localDocument.body.appendChild(this.dragPlaceholder);
 
           this.dropSubscriptions$.unsubscribe();
           this.dropSubscriptions$ = this.subscribeOnHoverItemWithChildren();

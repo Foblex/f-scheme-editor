@@ -9,7 +9,6 @@ import {
 import { CdkConnectedOverlay, CdkOverlayOrigin } from '@angular/cdk/overlay';
 import { MatFormField } from '@angular/material/form-field';
 import { AbstractControlDirective, NgControl } from '@angular/forms';
-import { matSelectAnimations } from '@angular/material/select';
 import { FImagePickerComponent } from './f-image-picker/f-image-picker.component';
 import { FOverlayPanelBase, IFImage } from '@ui-kit';
 import { FImagePickerPrefixComponent } from './f-image-picker-prefix/f-image-picker-prefix.component';
@@ -19,7 +18,6 @@ import { FImagePickerPrefixComponent } from './f-image-picker-prefix/f-image-pic
   templateUrl: './f-image-picker-overlay.component.html',
   styleUrls: [ './f-image-picker-overlay.component.scss' ],
   standalone: true,
-  animations: [ matSelectAnimations.transformPanel ],
   imports: [ CdkConnectedOverlay, CdkOverlayOrigin, FImagePickerComponent, FImagePickerPrefixComponent ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

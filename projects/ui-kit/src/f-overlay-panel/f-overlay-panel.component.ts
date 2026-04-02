@@ -4,7 +4,7 @@ import {
   Input, Output,
 } from '@angular/core';
 import { CdkConnectedOverlay, CdkOverlayOrigin } from '@angular/cdk/overlay';
-import { matSelectAnimations } from '@angular/material/select';
+
 import { F_OVERLAY_PANEL_COMPONENT, IFOverlayPanelComponent } from './i-f-overlay-panel-component';
 import { FIconButtonComponent } from '../f-icon-button';
 import { FOverlayPanelBase } from './domain';
@@ -14,7 +14,6 @@ import { FOverlayPanelBase } from './domain';
   templateUrl: './f-overlay-panel.component.html',
   styleUrls: [ './f-overlay-panel.component.scss' ],
   standalone: true,
-  animations: [ matSelectAnimations.transformPanel ],
   imports: [ CdkConnectedOverlay, CdkOverlayOrigin, FIconButtonComponent ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -28,6 +27,7 @@ export class FOverlayPanelComponent<T = any> extends FOverlayPanelBase {
 
   @ContentChild(F_OVERLAY_PANEL_COMPONENT, { static: true })
   public component: IFOverlayPanelComponent<T> | undefined;
+
 
   constructor() {
     super();

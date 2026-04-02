@@ -12,7 +12,6 @@ import { SInputOutputRadiusDirective } from './s-input-output-radius.directive';
   styleUrls: [ './s-node.component.scss' ],
   standalone: true,
   imports: [
-    NgOptimizedImage,
     FFlowModule,
     SNodeStyleDirective,
     FImageComponent,
